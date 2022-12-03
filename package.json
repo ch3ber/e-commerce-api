@@ -1,7 +1,7 @@
 {
-  "name": "crud-api-products",
+  "name": "postgresql-crud",
   "version": "0.0.0",
-  "description": "crud of a product api",
+  "description": "Crud in PostgreSQL with API in Express.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ch3ber/crud-api-products.git"
+    "url": "git+https://github.com/ch3ber/postgresql-crud.git"
   },
   "keywords": [
     "express",
@@ -26,9 +26,9 @@
   "author": "Eber Edrey Alejo Berrones <eber4202@hotmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ch3ber/crud-api-products/issues"
+    "url": "https://github.com/ch3ber/postgresql-crud/issues"
   },
-  "homepage": "https://github.com/ch3ber/crud-api-products#readme",
+  "homepage": "https://github.com/ch3ber/postgresql-crud#readme",
   "devDependencies": {
     "eslint": "8.28.0",
     "eslint-config-standard": "17.0.0",
