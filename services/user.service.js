@@ -35,13 +35,8 @@ class ProductsService {
 
   async find () {
     const query = 'SELECT * FROM tasks'
-    const response = await this.pool.query(query)
-    return response.rows
-    // return new Promise((resolve) => {
-    //   setTimeout(() => {
-    //     resolve(this.products)
-    //   }, 3000)
-    // })
+    const res = await this.pool.query(query)
+    return res.rows
   }
 
   async findOne (id) {
