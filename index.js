@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const routerApi = require('./routes')
 
-const { logErrors, errorHandler, boomErrorHandler } = require('./middlewares/error.handler')
+const { logErrors, errorHandler, boomErrorHandler, ormErrorHandler } = require('./middlewares/error.handler')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -19,22 +19,32 @@ const options = {
     }
   }
 }
+
 app.use(cors(options))
 
-app.get('/', (req, res) => {
-  res.send('Hola mi server en express')
-})
+const template = `
+Hola mi primer server en express.
+<br>
+Rutas disponibles en /api/v1/:
+<ul>
+  <li><a href="/api/v1/products" >/api/v1/products</a></li>
+  <li><a href="/api/v1/categories" >/api/v1/categories</a></li>
+  <li><a href="/api/v1/users" >/api/v1/users</a></li>
+  <li><a href="/api/v1/orders" >/api/v1/orders</a></li>
+</ul>
+`
 
-app.get('/nueva-ruta', (req, res) => {
-  res.send('Hola, soy una nueva ruta')
+app.get('/', (req, res) => {
+  res.status(200).send(template)
 })
 
 routerApi(app)
 
 app.use(logErrors)
+app.use(ormErrorHandler)
 app.use(boomErrorHandler)
 app.use(errorHandler)
 
 app.listen(port, () => {
-  console.log('Mi port' + port)
+  console.log('App runing on port: ' + port)
 })
