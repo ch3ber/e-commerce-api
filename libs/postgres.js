@@ -10,7 +10,6 @@ class Postgres {
     try {
       if (!Postgres.connection) {
         Postgres.connection = new PostgresClient()
-        console.log('Connected succesfully')
       }
       return Postgres.connection
     } catch (error) {
