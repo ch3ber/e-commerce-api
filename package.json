@@ -8,7 +8,11 @@
     "dev": "nodemon index.js",
     "start": "node index.js",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "migrations:generate": "sequelize-cli migration:generate --name",
+    "migrations:run": "sequelize-cli db:migrate",
+    "migrations:revert": "sequelize-cli db:migrate:undo",
+    "migrations:delete": "sequelize-cli db:migrate:undo:all"
   },
   "repository": {
     "type": "git",
@@ -36,7 +40,8 @@
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-n": "15.5.1",
     "eslint-plugin-promise": "6.1.1",
-    "nodemon": "2.0.20"
+    "nodemon": "2.0.20",
+    "sequelize-cli": "^6.5.2"
   },
   "dependencies": {
     "@hapi/boom": "10.0.0",
