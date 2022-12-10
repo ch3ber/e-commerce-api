@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,13 +12,18 @@
     }
   </style>
 </head>
+
 <body>
   <script>
-    (async ()=> {
-      const response = await fetch('http://localhost:3000/api/v1/products');
-      const data = await response.json();
-      console.log(data);
-    })();
+    <h1>Hola mi primer server en express.</h1>
+    <p>Rutas disponibles en / api / v1 /:</p>
+    <ul>
+      <li><a href="/api/v1/products" >/api/v1/products</a></li>
+      <li><a href="/api/v1/categories" >/api/v1/categories</a></li>
+      <li><a href="/api/v1/users" >/api/v1/users</a></li>
+      <li><a href="/api/v1/orders" >/api/v1/orders</a></li>
+    </ul>
   </script>
 </body>
+
 </html>
