@@ -1,6 +1,5 @@
 const { DataTypes, Sequelize } = require('sequelize')
-
-const TABLE_NAME = 'User'
+const sequelize = require('../../libs/sequelize')
 
 /**
  * Represent a schema in the DB
@@ -35,16 +34,20 @@ const userSchema = {
   }
 }
 
+const User = sequelize.define('User', userSchema, {
+  timestamps: false
+})
+
 /**
  * Define a user model in the DB
  * @function
  * @param {Sequelize} sequelize - sequelize instance
  * @returns {Sequelize} - User definition
  */
-const userModel = (sequelize) => {
-  return sequelize.define(TABLE_NAME, userSchema, {
-    timestamps: false
-  })
-}
+// const userModel = (sequelize) => {
+//   return sequelize.define(TABLE_NAME, userSchema, {
+//     timestamps: false
+//   })
+// }
 
-module.exports = { TABLE_NAME, userSchema, userModel }
+module.exports = { userSchema, User }

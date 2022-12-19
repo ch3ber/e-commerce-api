@@ -1,4 +1,5 @@
 const { userModel } = require('./models/user.model')
+const { customerModel } = require('./models/customer.model')
 
 /**
  * Constant to load DB models
@@ -6,7 +7,8 @@ const { userModel } = require('./models/user.model')
  * @type {model[]}
  */
 const MODELS = [
-  userModel
+  userModel,
+  customerModel
 ]
 
 /**
