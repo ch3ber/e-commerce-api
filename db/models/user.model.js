@@ -38,16 +38,4 @@ const User = sequelize.define('User', userSchema, {
   timestamps: false
 })
 
-/**
- * Define a user model in the DB
- * @function
- * @param {Sequelize} sequelize - sequelize instance
- * @returns {Sequelize} - User definition
- */
-// const userModel = (sequelize) => {
-//   return sequelize.define(TABLE_NAME, userSchema, {
-//     timestamps: false
-//   })
-// }
-
 module.exports = { userSchema, User }

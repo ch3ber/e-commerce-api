@@ -16,9 +16,4 @@ const sequelize = new Sequelize(URI, {
   loggin: true
 })
 
-/**
- * Load models into the DB
- */
-// setupModels(sequelize)
-
 module.exports = sequelize
