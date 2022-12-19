@@ -1,10 +1,17 @@
 const { ValidationError } = require('sequelize')
 
+/**
+ * Shows the error in the console where the app is run
+ */
 function logErrors (err, req, res, next) {
   console.error(err)
   next(err)
 }
 
+/**
+ * The last middleware, crash the server if any middleware catch the error.
+ * Display the error to the user
+ */
 function errorHandler (err, req, res, next) {
   res.status(500).json({
     message: err.message,
@@ -12,6 +19,10 @@ function errorHandler (err, req, res, next) {
   })
 }
 
+/**
+ * Management the schemas' errors.
+ * Display the error and status code to the user
+ */
 function boomErrorHandler (err, req, res, next) {
   if (err.isBoom) {
     const { output } = err
@@ -20,6 +31,10 @@ function boomErrorHandler (err, req, res, next) {
   next(err)
 }
 
+/**
+ * Management the orm's errors.
+ * Display the orm error to the user
+ */
 function ormErrorHandler (err, req, res, next) {
   if (err instanceof ValidationError) {
     res.status(409).json({
