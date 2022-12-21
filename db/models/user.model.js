@@ -1,6 +1,5 @@
 const { DataTypes, Sequelize } = require('sequelize')
 const sequelize = require('../../libs/sequelize')
-// const { Customer } = require('./customer.model')
 
 /**
  * Represent a schema in the DB
@@ -35,6 +34,9 @@ const userSchema = {
   }
 }
 
+/**
+ * Represents a user in the DB
+ */
 const User = sequelize.define('User', userSchema, {
   timestamps: false
 })
