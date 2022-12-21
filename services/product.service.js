@@ -1,8 +1,14 @@
+// @ts-check
 const { faker } = require('@faker-js/faker')
 const boom = require('@hapi/boom')
 
 const sequelize = require('../libs/sequelize')
 
+/**
+ * @typedef { import('./service.d.js').Service } Service
+ * @typedef { import('sequelize').Model<any, any> } Model
+ * @implements {Service}
+ */
 class ProductsService {
   constructor () {
     this.products = []
