@@ -1,4 +1,15 @@
+// @ts-check
 const { ValidationError } = require('sequelize')
+
+/**
+ * Definition of Middleware
+ * @function
+ * @param {*} error - Error
+ * @param {*} request - client request
+ * @param {*} response - server response
+ * @param {*} next - continue with next middleware
+ * @returns {void}
+ */
 
 /**
  * Shows the error in the console where the app is run
