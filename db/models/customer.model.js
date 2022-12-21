@@ -36,6 +36,7 @@ const customerSchema = {
     field: 'user_id',
     allowNull: false,
     type: DataTypes.INTEGER,
+    unique: true,
     references: {
       model: User,
       key: 'id'
@@ -48,11 +49,14 @@ const customerSchema = {
 const Customer = sequelize.define('Customer', customerSchema, {
   timestamps: false
 })
-console.log(Customer)
 
 /**
 * Defining the customer associations
 */
+User.hasOne(Customer, {
+  as: 'customer',
+  foreignKey: 'userId'
+})
 Customer.belongsTo(User, { as: 'user' })
 
 module.exports = { customerSchema, Customer }

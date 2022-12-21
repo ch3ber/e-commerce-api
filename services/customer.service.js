@@ -3,7 +3,7 @@ const { Customer } = require('../db/models/customer.model')
 
 class CustomerService {
   async find () {
-    const rta = await Customer.findAll()
+    const rta = await Customer.findAll({ include: ['user'] })
     return rta
   }
 
@@ -16,7 +16,7 @@ class CustomerService {
   }
 
   async create (data) {
-    const newCustomer = await Customer.create(data)
+    const newCustomer = await Customer.create(data, { include: ['user'] })
     return newCustomer
   }
 
@@ -29,7 +29,7 @@ class CustomerService {
   async delete (id) {
     const model = await this.findOne(id)
     await model.destroy()
-    return { rta: true }
+    return model
   }
 }
 
