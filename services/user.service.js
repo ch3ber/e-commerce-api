@@ -8,10 +8,6 @@ const { User } = require('../db/models/user.model')
  * @implements {Service}
  */
 class UserService {
-  constructor () {
-    this.products = []
-  }
-
   /**
    * Create a new user from the client data
    * @param {import("sequelize").Optional<any, string> | undefined} data

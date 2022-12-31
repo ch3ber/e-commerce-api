@@ -1,8 +1,6 @@
 // @ts-check
-const { faker } = require('@faker-js/faker')
 const boom = require('@hapi/boom')
-
-const sequelize = require('../libs/sequelize')
+const { Product } = require('../db/models/product.model')
 
 /**
  * @typedef { import('./service.d.js').Service } Service
@@ -10,73 +8,58 @@ const sequelize = require('../libs/sequelize')
  * @implements {Service}
  */
 class ProductsService {
-  constructor () {
-    this.products = []
-    this.generate()
-  }
-
-  generate () {
-    const limit = 100
-    for (let index = 0; index < limit; index++) {
-      this.products.push({
-        id: faker.datatype.uuid(),
-        name: faker.commerce.productName(),
-        price: parseInt(faker.commerce.price(), 10),
-        image: faker.image.imageUrl(),
-        isBlock: faker.datatype.boolean()
-      })
-    }
-  }
-
+  /**
+   * Create a new product from the client data
+   * @param {import("sequelize").Optional<any, string> | undefined} data
+   * @returns {Promise<Model>} - The new model created in the DB
+   */
   async create (data) {
-    const newProduct = {
-      id: faker.datatype.uuid(),
-      ...data
-    }
-    this.products.push(newProduct)
+    const newProduct = await Product.create(data)
     return newProduct
   }
 
+  /**
+   * Find all products into the DB
+   * @returns {Promise<Model[]>} - Array of all products in the DB
+   */
   async find () {
-    const data = await sequelize.models.User.findAll()
-    return data
-    // return new Promise((resolve) => {
-    //   setTimeout(() => {
-    //     resolve(this.products)
-    //   }, 3000)
-    // })
+    const proucts = await Product.findAll()
+    return proucts
   }
 
+  /**
+   * Find a product from the DB
+   * @param {import("sequelize").Identifier | undefined} id - product's id in the DB
+   * @returns {Promise<Model>} - product found in the DB
+   */
   async findOne (id) {
-    const product = this.products.find(item => item.id === id)
+    const product = await Product.findByPk(id)
     if (!product) {
-      throw boom.notFound('product not found')
-    }
-    if (product.isBlock) {
-      throw boom.conflict('product is block')
+      throw boom.notFound('Product not found')
     }
     return product
   }
 
+  /**
+   * Update data from a product in the DB
+   * @param {number} id - product's id in the DB
+   * @param {object} changes - changes to apply to the product
+   * @returns {Promise<Model>} - product with changes applied
+   */
   async update (id, changes) {
-    const index = this.products.findIndex(item => item.id === id)
-    if (index === -1) {
-      throw boom.notFound('product not found')
-    }
-    const product = this.products[index]
-    this.products[index] = {
-      ...product,
-      ...changes
-    }
-    return this.products[index]
+    const product = await this.findOne(id)
+    const response = await product.update(changes)
+    return response
   }
 
+  /**
+   * Delete a product from the DB
+   * @param {number} id - product's id in the DB
+   * @returns {Promise<{ id: number }>} - Deteled product id
+   */
   async delete (id) {
-    const index = this.products.findIndex(item => item.id === id)
-    if (index === -1) {
-      throw boom.notFound('product not found')
-    }
-    this.products.splice(index, 1)
+    const product = await this.findOne(id)
+    product.destroy()
     return { id }
   }
 }
