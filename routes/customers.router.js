@@ -1,5 +1,5 @@
 const express = require('express')
-const CustomerService = require('../services/customer.service')
+const { customerService } = require('../services/customer.service')
 const validationHandler = require('../middlewares/validator.handler')
 
 const {
@@ -9,11 +9,10 @@ const {
 } = require('../schemas/customer.schema')
 
 const router = express.Router()
-const service = new CustomerService()
 
 router.get('/', async (req, res, next) => {
   try {
-    res.json(await service.find())
+    res.json(await customerService.find())
   } catch (error) {
     next(error)
   }
@@ -25,7 +24,7 @@ router.post(
   async (req, res, next) => {
     try {
       const body = req.body
-      res.status(201).json(await service.create(body))
+      res.status(201).json(await customerService.create(body))
     } catch (error) {
       next(error)
     }
@@ -40,7 +39,7 @@ router.patch(
     try {
       const { id } = req.params
       const body = req.body
-      res.status(201).json(await service.update(id, body))
+      res.status(201).json(await customerService.update(id, body))
     } catch (error) {
       next(error)
     }
@@ -53,7 +52,7 @@ router.delete(
   async (req, res, next) => {
     try {
       const { id } = req.params
-      res.status(200).json(await service.delete(id))
+      res.status(200).json(await customerService.delete(id))
     } catch (error) {
       next(error)
     }

@@ -1,31 +1,6 @@
-const boom = require('@hapi/boom')
+const { Category } = require('../db/models/category.model')
+const { MakeBaseServiceFrom } = require('./MakeBasicServiceFrom')
 
-class CategoryService {
-  constructor () {
-  }
+const categoryService = new MakeBaseServiceFrom(Category)
 
-  async create (data) {
-    return data
-  }
-
-  async find () {
-    return []
-  }
-
-  async findOne (id) {
-    return { id }
-  }
-
-  async update (id, changes) {
-    return {
-      id,
-      changes
-    }
-  }
-
-  async delete (id) {
-    return { id }
-  }
-}
-
-module.exports = CategoryService
+module.exports = { categoryService }
