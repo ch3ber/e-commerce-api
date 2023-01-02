@@ -1,10 +1,10 @@
 import express from 'express'
 
-import productsRouter from './products.router'
-import categoriesRouter from './categories.router'
-import usersRouter from './users.router'
-import orderRouter from './orders.router'
-import customersRouter from './customers.router'
+import productsRouter from './products.router.js'
+import categoriesRouter from './categories.router.js'
+import usersRouter from './users.router.js'
+import orderRouter from './orders.router.js'
+import customersRouter from './customers.router.js'
 
 function routerApi (app) {
   const router = express.Router()

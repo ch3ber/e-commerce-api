@@ -1,5 +1,5 @@
-import { Category } from '../db/models/category.model'
-import { MakeBaseServiceFrom } from './MakeBasicServiceFrom'
+import { Category } from '../db/models/category.model.js'
+import { MakeBaseServiceFrom } from './MakeBasicServiceFrom.js'
 
 const categoryService = new MakeBaseServiceFrom(Category)
 

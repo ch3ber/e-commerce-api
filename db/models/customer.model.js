@@ -1,12 +1,12 @@
 import { DataTypes, Sequelize } from 'sequelize'
-import sequelize from '../../libs/sequelize'
-import { User } from './user.model'
+import sequelize from '../../libs/sequelize.js'
+import { User } from './user.model.js'
 
 /**
  * Represent a schema in the DB
  * @constant {Object}
  */
-const customerSchema = {
+export const customerSchema = {
   id: {
     allowNull: false,
     autoIncrement: true,
@@ -46,7 +46,7 @@ const customerSchema = {
   }
 }
 
-const Customer = sequelize.define('Customer', customerSchema, {
+export const Customer = sequelize.define('Customer', customerSchema, {
   timestamps: false
 })
 
@@ -58,5 +58,3 @@ User.hasOne(Customer, {
   foreignKey: 'userId'
 })
 Customer.belongsTo(User, { as: 'user' })
-
-export default { customerSchema, Customer }

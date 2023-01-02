@@ -1,7 +1,7 @@
 'use strict'
 
-import { Category, categorySchema } from '../models/category.model'
-import { Product, productSchema } from '../models/product.model'
+import { Category, categorySchema } from '../models/category.model.js'
+import { Product, productSchema } from '../models/product.model.js'
 
 /** @type {import('sequelize-cli').Migration} */
 export default {

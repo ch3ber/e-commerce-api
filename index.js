@@ -1,10 +1,10 @@
 // @ts-check
 import express from 'express'
 import cors from 'cors'
-import routerApi from './routes'
+import routerApi from './routes/index.js'
 
 // import error middlewares
-import { logErrors, errorHandler, boomErrorHandler, ormErrorHandler } from './middlewares/error.handler'
+import { logErrors, errorHandler, boomErrorHandler, ormErrorHandler } from './middlewares/error.handler.js'
 
 // init the express app
 const app = express()

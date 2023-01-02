@@ -1,4 +1,4 @@
-import { config } from './../config/config'
+import { config } from './../config/config.js'
 
 const USER = encodeURIComponent(config.dbUser)
 const PASSWORD = encodeURIComponent(config.dbPassword)

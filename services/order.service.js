@@ -1,7 +1,7 @@
 // @ts-check
 import boom from '@hapi/boom'
-import { MakeBaseServiceFrom } from './MakeBasicServiceFrom'
-import { Order } from '../db/models/order.model'
+import { MakeBaseServiceFrom } from './MakeBasicServiceFrom.js'
+import { Order } from '../db/models/order.model.js'
 
 class OrderService extends MakeBaseServiceFrom {
   /**

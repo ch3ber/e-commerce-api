@@ -1,4 +1,4 @@
-import { Pool: PostgresClient } from 'pg'
+import { Pool as PostgresClient } from 'pg'
 
 class Postgres {
   /**

@@ -1,6 +1,6 @@
 // @ts-check
-import { MakeBaseServiceFrom } from './MakeBasicServiceFrom'
-import { Product } from '../db/models/product.model'
+import { MakeBaseServiceFrom } from './MakeBasicServiceFrom.js'
+import { Product } from '../db/models/product.model.js'
 
 const productService = new MakeBaseServiceFrom(Product)
 

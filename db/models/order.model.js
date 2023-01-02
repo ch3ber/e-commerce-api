@@ -1,12 +1,12 @@
 import { DataTypes, Sequelize } from 'sequelize'
-import sequelize from '../../libs/sequelize'
-import { Customer } from './customer.model'
+import sequelize from '../../libs/sequelize.js'
+import { Customer } from './customer.model.js'
 
 /**
  * Represent a schema in the DB
  * @constant {Object}
  */
-const orderSchema = {
+export const orderSchema = {
   id: {
     allowNull: false,
     autoIncrement: true,
@@ -34,7 +34,7 @@ const orderSchema = {
 /**
  * Represents a order in the DB
  */
-const Order = sequelize.define('Order', orderSchema, {
+export const Order = sequelize.define('Order', orderSchema, {
   timestamps: false
 })
 Order.belongsTo(Customer, {
@@ -44,5 +44,3 @@ Customer.hasMany(Order, {
   as: 'orders',
   foreignKey: 'customer_id'
 })
-
-export default { orderSchema, Order }

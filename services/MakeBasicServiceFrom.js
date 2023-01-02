@@ -18,7 +18,7 @@ import boom from '@hapi/boom'
  * @implements {DeletableService}
  * @param {ModelCtor} model - model to create the service
  */
-class MakeBaseServiceFrom {
+export class MakeBaseServiceFrom {
   __model
   constructor (model) {
     this.__model = model
@@ -79,5 +79,3 @@ class MakeBaseServiceFrom {
     return { id }
   }
 }
-
-export default { MakeBaseServiceFrom }

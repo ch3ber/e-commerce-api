@@ -1,7 +1,7 @@
 'use strict'
 
 import { DataTypes } from 'sequelize'
-import { Customer } from '../models/customer.model'
+import { Customer } from '../models/customer.model.js'
 
 /** @type {import('sequelize-cli').Migration} */
 export default {

@@ -1,11 +1,11 @@
 import { DataTypes, Sequelize } from 'sequelize'
-import sequelize from '../../libs/sequelize'
+import sequelize from '../../libs/sequelize.js'
 
 /**
  * Represent a schema in the DB
  * @constant {Object}
  */
-const userSchema = {
+export const userSchema = {
   id: {
     allowNull: false,
     autoIncrement: true,
@@ -37,8 +37,6 @@ const userSchema = {
 /**
  * Represents a user in the DB
  */
-const User = sequelize.define('User', userSchema, {
+export const User = sequelize.define('User', userSchema, {
   timestamps: false
 })
-
-export default { userSchema, User }

@@ -1,6 +1,6 @@
 'use strict'
 
-import { customerSchema, Customer } from '../models/customer.model'
+import { customerSchema, Customer } from '../models/customer.model.js'
 
 /** @type {import('sequelize-cli').Migration} */
 export default {
