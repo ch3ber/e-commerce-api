@@ -3,9 +3,10 @@ const express = require('express')
 const cors = require('cors')
 const routerApi = require('./routes')
 
-// error middlewares
+// import error middlewares
 const { logErrors, errorHandler, boomErrorHandler, ormErrorHandler } = require('./middlewares/error.handler')
 
+// init the express app
 const app = express()
 const port = process.env.PORT || 3000
 
@@ -24,22 +25,11 @@ const options = {
   }
 }
 
+// load cors config
 app.use(cors(options))
 
-const template = `
-Hola mi primer server en express.
-<br>
-Rutas disponibles en /api/v1/:
-<ul>
-  <li><a href="/api/v1/products" >/api/v1/products</a></li>
-  <li><a href="/api/v1/categories" >/api/v1/categories</a></li>
-  <li><a href="/api/v1/users" >/api/v1/users</a></li>
-  <li><a href="/api/v1/orders" >/api/v1/orders</a></li>
-</ul>
-`
-
 app.get('/', (req, res) => {
-  res.status(200).send(template)
+  res.status(200).send('Welcome!')
 })
 
 // router of api, url: domain.com/api/v1/*
@@ -51,6 +41,7 @@ app.use(ormErrorHandler)
 app.use(boomErrorHandler)
 app.use(errorHandler)
 
+// run the app on a port
 app.listen(port, () => {
   console.log('App runing on port: ' + port)
 })
