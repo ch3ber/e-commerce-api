@@ -3,4 +3,4 @@ import { MakeBaseServiceFrom } from './MakeBasicServiceFrom'
 
 const categoryService = new MakeBaseServiceFrom(Category)
 
-export defaul { categoryService }
+export default { categoryService }

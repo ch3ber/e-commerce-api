@@ -5,7 +5,7 @@ const PASSWORD = encodeURIComponent(config.dbPassword)
 
 const URI = `postgres://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${config.dbName}`
 
-export defaul {
+export default {
   development: {
     url: URI,
     dialect: 'postgres'

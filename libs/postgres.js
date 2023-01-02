@@ -32,4 +32,4 @@ class Postgres {
   }
 }
 
-export defaul Postgres
+export default Postgres

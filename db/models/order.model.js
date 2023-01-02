@@ -45,4 +45,4 @@ Customer.hasMany(Order, {
   foreignKey: 'customer_id'
 })
 
-export defaul { orderSchema, Order }
+export default { orderSchema, Order }

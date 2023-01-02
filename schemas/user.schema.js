@@ -20,4 +20,4 @@ const getUserSchema = Joi.object({
   id: id.required()
 })
 
-export defaul { createUserSchema, updateUserSchema, getUserSchema }
+export default { createUserSchema, updateUserSchema, getUserSchema }

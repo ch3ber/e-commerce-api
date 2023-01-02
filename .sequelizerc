@@ -1,4 +1,4 @@
-export defaul {
+export default {
   'config': './db/config.js',
   'models-path': './db/models/',
   'migrations-path': './db/migrations/',

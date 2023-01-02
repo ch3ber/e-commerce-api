@@ -41,4 +41,4 @@ const User = sequelize.define('User', userSchema, {
   timestamps: false
 })
 
-export defaul { userSchema, User }
+export default { userSchema, User }

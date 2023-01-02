@@ -16,4 +16,4 @@ function routerApi (app) {
   router.use('/customers', customersRouter)
 }
 
-export defaul routerApi
+export default routerApi

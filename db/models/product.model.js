@@ -64,4 +64,4 @@ Category.hasMany(Product, {
 })
 Product.belongsTo(Category, { as: 'category' })
 
-export defaul { productSchema, Product }
+export default { productSchema, Product }

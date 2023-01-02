@@ -80,4 +80,4 @@ class MakeBaseServiceFrom {
   }
 }
 
-export defaul { MakeBaseServiceFrom }
+export default { MakeBaseServiceFrom }

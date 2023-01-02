@@ -18,4 +18,4 @@ const getCategorySchema = Joi.object({
   id: id.required()
 })
 
-export defaul { createCategorySchema, updateCategorySchema, getCategorySchema }
+export default { createCategorySchema, updateCategorySchema, getCategorySchema }

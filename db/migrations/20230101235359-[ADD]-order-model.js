@@ -2,7 +2,7 @@
 import { Order, orderSchema } from '../models/order.model'
 
 /** @type {import('sequelize-cli').Migration} */
-export defaul {
+export default {
   async up (queryInterface, Sequelize) {
     await queryInterface.createTable(Order.tableName, orderSchema)
   },

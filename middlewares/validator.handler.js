@@ -21,4 +21,4 @@ function validatorHandler (schema, property) {
   }
 }
 
-export defaul validatorHandler
+export default validatorHandler

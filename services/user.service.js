@@ -20,4 +20,4 @@ class UserService extends MakeBaseServiceFrom {
 
 const userService = new UserService(User)
 
-export defaul { userService }
+export default { userService }

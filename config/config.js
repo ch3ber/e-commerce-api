@@ -10,4 +10,4 @@ const config = {
   dbPort: process.env.DB_PORT
 }
 
-export defaul { config }
+export default { config }

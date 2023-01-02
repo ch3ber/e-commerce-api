@@ -15,4 +15,4 @@ const sequelize = new Sequelize(URI, {
   loggin: true
 })
 
-export defaul sequelize
+export default sequelize

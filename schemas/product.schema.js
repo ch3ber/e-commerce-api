@@ -25,4 +25,4 @@ const getProductSchema = Joi.object({
   id: id.required()
 })
 
-export defaul { createProductSchema, updateProductSchema, getProductSchema }
+export default { createProductSchema, updateProductSchema, getProductSchema }

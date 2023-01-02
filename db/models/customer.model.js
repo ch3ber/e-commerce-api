@@ -59,4 +59,4 @@ User.hasOne(Customer, {
 })
 Customer.belongsTo(User, { as: 'user' })
 
-export defaul { customerSchema, Customer }
+export default { customerSchema, Customer }

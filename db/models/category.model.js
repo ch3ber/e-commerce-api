@@ -36,4 +36,4 @@ const Category = sequelize.define('Category', categorySchema, {
   timestamps: false
 })
 
-export defaul { categorySchema, Category }
+export default { categorySchema, Category }

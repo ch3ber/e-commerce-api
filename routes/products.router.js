@@ -69,4 +69,4 @@ router.delete('/:id',
   }
 )
 
-export defaul router
+export default router

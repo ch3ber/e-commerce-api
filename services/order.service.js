@@ -35,4 +35,4 @@ class OrderService extends MakeBaseServiceFrom {
 
 const orderService = new OrderService(Order)
 
-export defaul { orderService }
+export default { orderService }

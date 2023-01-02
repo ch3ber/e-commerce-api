@@ -4,4 +4,4 @@ import { Product } from '../db/models/product.model'
 
 const productService = new MakeBaseServiceFrom(Product)
 
-export defaul { productService }
+export default { productService }

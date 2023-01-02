@@ -42,4 +42,4 @@ router.post('/',
   }
 )
 
-export defaul router
+export default router

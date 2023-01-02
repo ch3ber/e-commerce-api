@@ -57,4 +57,4 @@ function ormErrorHandler (err, req, res, next) {
   next(err)
 }
 
-export defaul { logErrors, errorHandler, boomErrorHandler, ormErrorHandler }
+export default { logErrors, errorHandler, boomErrorHandler, ormErrorHandler }

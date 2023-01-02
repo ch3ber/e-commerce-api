@@ -59,4 +59,4 @@ router.delete(
   }
 )
 
-export defaul router
+export default router

@@ -11,4 +11,4 @@ const createOrderSchema = Joi.object({
   customerId: customerId.required()
 })
 
-export defaul { getOrderSchema, createOrderSchema }
+export default { getOrderSchema, createOrderSchema }
