@@ -1,11 +1,11 @@
-import { DataTypes, Sequelize } from 'sequelize.js'
+import { DataTypes, Sequelize } from 'sequelize'
 import sequelize from '../../libs/sequelize.js'
 
 /**
  * Represent a schema in the DB
  * @constant {Object}
  */
-const categorySchema = {
+export const categorySchema = {
   id: {
     allowNull: false,
     autoIncrement: true,
@@ -32,8 +32,6 @@ const categorySchema = {
 /**
  * Represents the category model in the DB
  */
-const Category = sequelize.define('Category', categorySchema, {
+export const Category = sequelize.define('Category', categorySchema, {
   timestamps: false
 })
-
-export default { categorySchema, Category }

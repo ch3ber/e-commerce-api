@@ -29,4 +29,4 @@ const updateCustomerSchema = Joi.object({
   userId
 })
 
-export default { getCustomerSchema, createCustomerSchema, updateCustomerSchema }
+export { getCustomerSchema, createCustomerSchema, updateCustomerSchema }

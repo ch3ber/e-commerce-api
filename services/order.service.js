@@ -3,7 +3,7 @@ import boom from '@hapi/boom'
 import { MakeBaseServiceFrom } from './MakeBasicServiceFrom.js'
 import { Order } from '../db/models/order.model.js'
 
-class OrderService extends MakeBaseServiceFrom {
+export class OrderService extends MakeBaseServiceFrom {
   /**
    * Find all objects into the DB
    * @returns Array of all objects in the DB
@@ -33,6 +33,4 @@ class OrderService extends MakeBaseServiceFrom {
   }
 }
 
-const orderService = new OrderService(Order)
-
-export default { orderService }
+export const orderService = new OrderService(Order)

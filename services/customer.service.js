@@ -17,6 +17,4 @@ class CustomerService extends MakeBaseServiceFrom {
   }
 }
 
-const customerService = new CustomerService(Customer)
-
-export default { customerService }
+export const customerService = new CustomerService(Customer)

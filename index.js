@@ -8,7 +8,7 @@ import { logErrors, errorHandler, boomErrorHandler, ormErrorHandler } from './mi
 
 // init the express app
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT
 
 // middleware to show the outputs in JSON format
 app.use(express.json())
