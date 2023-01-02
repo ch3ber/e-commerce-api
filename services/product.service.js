@@ -1,7 +1,7 @@
 // @ts-check
-const { MakeBaseServiceFrom } = require('./MakeBasicServiceFrom')
-const { Product } = require('../db/models/product.model')
+import { MakeBaseServiceFrom } from './MakeBasicServiceFrom'
+import { Product } from '../db/models/product.model'
 
 const productService = new MakeBaseServiceFrom(Product)
 
-module.exports = { productService }
+export defaul { productService }

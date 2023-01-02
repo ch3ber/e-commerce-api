@@ -1,4 +1,4 @@
-const Joi = require('joi')
+import Joi from 'joi'
 
 const id = Joi.number().integer()
 const name = Joi.string().min(3).max(30)
@@ -29,4 +29,4 @@ const updateCustomerSchema = Joi.object({
   userId
 })
 
-module.exports = { getCustomerSchema, createCustomerSchema, updateCustomerSchema }
+export defaul { getCustomerSchema, createCustomerSchema, updateCustomerSchema }

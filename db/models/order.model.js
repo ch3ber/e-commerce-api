@@ -1,6 +1,6 @@
-const { DataTypes, Sequelize } = require('sequelize')
-const sequelize = require('../../libs/sequelize')
-const { Customer } = require('./customer.model')
+import { DataTypes, Sequelize } from 'sequelize'
+import sequelize from '../../libs/sequelize'
+import { Customer } from './customer.model'
 
 /**
  * Represent a schema in the DB
@@ -45,4 +45,4 @@ Customer.hasMany(Order, {
   foreignKey: 'customer_id'
 })
 
-module.exports = { orderSchema, Order }
+export defaul { orderSchema, Order }

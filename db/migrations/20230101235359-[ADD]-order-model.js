@@ -1,8 +1,8 @@
 'use strict'
-const { Order, orderSchema } = require('../models/order.model')
+import { Order, orderSchema } from '../models/order.model'
 
 /** @type {import('sequelize-cli').Migration} */
-module.exports = {
+export defaul {
   async up (queryInterface, Sequelize) {
     await queryInterface.createTable(Order.tableName, orderSchema)
   },

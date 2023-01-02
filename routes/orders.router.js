@@ -1,9 +1,9 @@
-const express = require('express')
+import express from 'express'
 
-const { orderService } = require('./../services/order.service')
+import { orderService } from './../services/order.service'
 
-const validatorHandler = require('./../middlewares/validator.handler')
-const { getOrderSchema, createOrderSchema } = require('../schemas/order.schema')
+import validatorHandler from './../middlewares/validator.handler'
+import { getOrderSchema, createOrderSchema } from '../schemas/order.schema'
 
 const router = express.Router()
 
@@ -42,4 +42,4 @@ router.post('/',
   }
 )
 
-module.exports = router
+export defaul router

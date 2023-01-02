@@ -1,7 +1,7 @@
 // @ts-check
-const boom = require('@hapi/boom')
-const { MakeBaseServiceFrom } = require('./MakeBasicServiceFrom')
-const { Order } = require('../db/models/order.model')
+import boom from '@hapi/boom'
+import { MakeBaseServiceFrom } from './MakeBasicServiceFrom'
+import { Order } from '../db/models/order.model'
 
 class OrderService extends MakeBaseServiceFrom {
   /**
@@ -35,4 +35,4 @@ class OrderService extends MakeBaseServiceFrom {
 
 const orderService = new OrderService(Order)
 
-module.exports = { orderService }
+export defaul { orderService }

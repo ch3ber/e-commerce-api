@@ -1,8 +1,8 @@
-const express = require('express')
+import express from 'express'
 
-const { categoryService } = require('./../services/category.service')
-const validatorHandler = require('./../middlewares/validator.handler')
-const { createCategorySchema, updateCategorySchema, getCategorySchema } = require('./../schemas/category.schema')
+import { categoryService } from './../services/category.service'
+import validatorHandler from './../middlewares/validator.handler'
+import { createCategorySchema, updateCategorySchema, getCategorySchema } from './../schemas/category.schema'
 
 const router = express.Router()
 
@@ -69,4 +69,4 @@ router.delete('/:id',
   }
 )
 
-module.exports = router
+export defaul router

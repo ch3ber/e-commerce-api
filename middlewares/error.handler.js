@@ -1,5 +1,5 @@
 // @ts-check
-const { ValidationError } = require('sequelize')
+import { ValidationError } from 'sequelize'
 
 /**
  * Definition of Middleware
@@ -57,4 +57,4 @@ function ormErrorHandler (err, req, res, next) {
   next(err)
 }
 
-module.exports = { logErrors, errorHandler, boomErrorHandler, ormErrorHandler }
+export defaul { logErrors, errorHandler, boomErrorHandler, ormErrorHandler }

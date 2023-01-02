@@ -1,4 +1,4 @@
-const { Pool: PostgresClient } = require('pg')
+import { Pool: PostgresClient } from 'pg'
 
 class Postgres {
   /**
@@ -32,4 +32,4 @@ class Postgres {
   }
 }
 
-module.exports = Postgres
+export defaul Postgres

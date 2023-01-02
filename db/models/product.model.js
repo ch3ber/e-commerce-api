@@ -1,6 +1,6 @@
-const { DataTypes, Sequelize } = require('sequelize')
-const sequelize = require('../../libs/sequelize')
-const { Category } = require('./category.model')
+import { DataTypes, Sequelize } from 'sequelize'
+import sequelize from '../../libs/sequelize'
+import { Category } from './category.model'
 
 /**
  * Represent a schema in the DB
@@ -64,4 +64,4 @@ Category.hasMany(Product, {
 })
 Product.belongsTo(Category, { as: 'category' })
 
-module.exports = { productSchema, Product }
+export defaul { productSchema, Product }

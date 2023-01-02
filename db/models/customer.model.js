@@ -1,7 +1,6 @@
-const { DataTypes, Sequelize } = require('sequelize')
-const sequelize = require('../../libs/sequelize')
-// const { Order } = require('./order.model')
-const { User } = require('./user.model')
+import { DataTypes, Sequelize } from 'sequelize'
+import sequelize from '../../libs/sequelize'
+import { User } from './user.model'
 
 /**
  * Represent a schema in the DB
@@ -60,4 +59,4 @@ User.hasOne(Customer, {
 })
 Customer.belongsTo(User, { as: 'user' })
 
-module.exports = { customerSchema, Customer }
+export defaul { customerSchema, Customer }

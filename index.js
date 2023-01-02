@@ -1,10 +1,10 @@
 // @ts-check
-const express = require('express')
-const cors = require('cors')
-const routerApi = require('./routes')
+import express from 'express'
+import cors from 'cors'
+import routerApi from './routes'
 
 // import error middlewares
-const { logErrors, errorHandler, boomErrorHandler, ormErrorHandler } = require('./middlewares/error.handler')
+import { logErrors, errorHandler, boomErrorHandler, ormErrorHandler } from './middlewares/error.handler'
 
 // init the express app
 const app = express()

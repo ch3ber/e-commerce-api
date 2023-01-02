@@ -1,4 +1,4 @@
-module.exports = {
+export defaul {
   env: {
     browser: true,
     commonjs: true,

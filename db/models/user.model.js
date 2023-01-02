@@ -1,5 +1,5 @@
-const { DataTypes, Sequelize } = require('sequelize')
-const sequelize = require('../../libs/sequelize')
+import { DataTypes, Sequelize } from 'sequelize'
+import sequelize from '../../libs/sequelize'
 
 /**
  * Represent a schema in the DB
@@ -41,4 +41,4 @@ const User = sequelize.define('User', userSchema, {
   timestamps: false
 })
 
-module.exports = { userSchema, User }
+export defaul { userSchema, User }

@@ -1,8 +1,8 @@
-const express = require('express')
+import express from 'express'
 
-const { userService } = require('./../services/user.service')
-const validatorHandler = require('./../middlewares/validator.handler')
-const { updateUserSchema, createUserSchema, getUserSchema } = require('./../schemas/user.schema')
+import { userService } from './../services/user.service'
+import validatorHandler from './../middlewares/validator.handler'
+import { updateUserSchema, createUserSchema, getUserSchema } from './../schemas/user.schema'
 
 const router = express.Router()
 
@@ -69,4 +69,4 @@ router.delete('/:id',
   }
 )
 
-module.exports = router
+export defaul router

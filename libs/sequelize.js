@@ -1,6 +1,5 @@
-const { Sequelize } = require('sequelize')
-const { config } = require('../config/config')
-// const setupModels = require('../db/setupModels')
+import { Sequelize } from 'sequelize'
+import { config } from '../config/config'
 
 const USER = encodeURIComponent(config.dbUser)
 const PASSWORD = encodeURIComponent(config.dbPassword)
@@ -16,4 +15,4 @@ const sequelize = new Sequelize(URI, {
   loggin: true
 })
 
-module.exports = sequelize
+export defaul sequelize

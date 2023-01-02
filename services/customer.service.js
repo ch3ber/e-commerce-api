@@ -1,6 +1,6 @@
 // @ts-check
-const { MakeBaseServiceFrom } = require('./MakeBasicServiceFrom')
-const { Customer } = require('../db/models/customer.model')
+import { MakeBaseServiceFrom } from './MakeBasicServiceFrom'
+import { Customer } from '../db/models/customer.model'
 
 class CustomerService extends MakeBaseServiceFrom {
   async find () {
@@ -19,4 +19,4 @@ class CustomerService extends MakeBaseServiceFrom {
 
 const customerService = new CustomerService(Customer)
 
-module.exports = { customerService }
+export defaul { customerService }

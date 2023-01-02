@@ -1,9 +1,9 @@
 'use strict'
 
-const { userSchema, User } = require('../models/user.model')
+import { userSchema, User } from '../models/user.model'
 
 /** @type {import('sequelize-cli').Migration} */
-module.exports = {
+export defaul {
   async up (queryInterface, Sequelize) {
     await queryInterface.createTable(User.tableName, userSchema)
   },

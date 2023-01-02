@@ -1,10 +1,10 @@
 'use strict'
 
-const { DataTypes } = require('sequelize')
-const { Customer } = require('../models/customer.model')
+import { DataTypes } from 'sequelize'
+import { Customer } from '../models/customer.model'
 
 /** @type {import('sequelize-cli').Migration} */
-module.exports = {
+export defaul {
   async up (queryInterface, Sequelize) {
     await queryInterface.changeColumn(Customer.tableName, 'user_id', {
       field: 'user_id',

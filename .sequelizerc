@@ -1,4 +1,4 @@
-module.exports = {
+export defaul {
   'config': './db/config.js',
   'models-path': './db/models/',
   'migrations-path': './db/migrations/',

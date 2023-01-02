@@ -1,5 +1,5 @@
 // @ts-check
-const boom = require('@hapi/boom')
+import boom from '@hapi/boom'
 
 /**
  * @typedef { import('./service').CreateableService } CreateableService
@@ -80,4 +80,4 @@ class MakeBaseServiceFrom {
   }
 }
 
-module.exports = { MakeBaseServiceFrom }
+export defaul { MakeBaseServiceFrom }

@@ -1,6 +1,6 @@
 // @ts-check
-const { User } = require('../db/models/user.model')
-const { MakeBaseServiceFrom } = require('./MakeBasicServiceFrom')
+import { User } from '../db/models/user.model'
+import { MakeBaseServiceFrom } from './MakeBasicServiceFrom'
 
 // const UserService = new MakeBaseServiceFrom(User)
 /**
@@ -20,4 +20,4 @@ class UserService extends MakeBaseServiceFrom {
 
 const userService = new UserService(User)
 
-module.exports = { userService }
+export defaul { userService }

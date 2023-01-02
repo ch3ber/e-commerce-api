@@ -1,5 +1,5 @@
 // @ts-check
-const boom = require('@hapi/boom')
+import boom from '@hapi/boom'
 
 /** @typedef {import('../node_modules/joi/lib/index.d.js').ObjectSchema} JoiObject */
 
@@ -21,4 +21,4 @@ function validatorHandler (schema, property) {
   }
 }
 
-module.exports = validatorHandler
+export defaul validatorHandler

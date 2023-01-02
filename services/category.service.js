@@ -1,6 +1,6 @@
-const { Category } = require('../db/models/category.model')
-const { MakeBaseServiceFrom } = require('./MakeBasicServiceFrom')
+import { Category } from '../db/models/category.model'
+import { MakeBaseServiceFrom } from './MakeBasicServiceFrom'
 
 const categoryService = new MakeBaseServiceFrom(Category)
 
-module.exports = { categoryService }
+export defaul { categoryService }
