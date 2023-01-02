@@ -19,10 +19,9 @@ const boom = require('@hapi/boom')
  * @param {ModelCtor} model - model to create the service
  */
 class MakeBaseServiceFrom {
-  #model
-
+  __model
   constructor (model) {
-    this.#model = model
+    this.__model = model
   }
 
   /**
@@ -31,7 +30,7 @@ class MakeBaseServiceFrom {
    * @returns - The new object created in the DB
    */
   async create (data) {
-    const newObject = await this.#model.create(data)
+    const newObject = await this.__model.create(data)
     return newObject
   }
 
@@ -40,7 +39,7 @@ class MakeBaseServiceFrom {
    * @returns Array of all objects in the DB
    */
   async find () {
-    const data = await this.#model.findAll()
+    const data = await this.__model.findAll()
     return data
   }
 
@@ -50,7 +49,7 @@ class MakeBaseServiceFrom {
    * @returns - object found in the DB
    */
   async findOne (id) {
-    const data = await this.#model.findByPk(id)
+    const data = await this.__model.findByPk(id)
     if (!data) {
       throw boom.notFound('Data not found')
     }

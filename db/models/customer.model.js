@@ -1,5 +1,6 @@
 const { DataTypes, Sequelize } = require('sequelize')
 const sequelize = require('../../libs/sequelize')
+// const { Order } = require('./order.model')
 const { User } = require('./user.model')
 
 /**
