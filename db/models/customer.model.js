@@ -49,12 +49,3 @@ export const customerSchema = {
 export const Customer = sequelize.define('Customer', customerSchema, {
   timestamps: false
 })
-
-/**
-* Defining the customer associations
-*/
-User.hasOne(Customer, {
-  as: 'customer',
-  foreignKey: 'userId'
-})
-Customer.belongsTo(User, { as: 'user' })

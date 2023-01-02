@@ -37,10 +37,3 @@ export const orderSchema = {
 export const Order = sequelize.define('Order', orderSchema, {
   timestamps: false
 })
-Order.belongsTo(Customer, {
-  as: 'customer'
-})
-Customer.hasMany(Order, {
-  as: 'orders',
-  foreignKey: 'customer_id'
-})

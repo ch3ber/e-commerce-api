@@ -54,12 +54,3 @@ export const productSchema = {
 export const Product = sequelize.define('Product', productSchema, {
   timestamps: false
 })
-
-/**
-* Defining the customer associations
-*/
-Category.hasMany(Product, {
-  as: 'products',
-  foreignKey: 'categoryId'
-})
-Product.belongsTo(Category, { as: 'category' })
