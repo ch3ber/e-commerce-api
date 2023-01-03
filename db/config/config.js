@@ -1,9 +1,13 @@
-import { config } from './../config/config.js'
+/**
+ * db/config.js
+ * Config for .sequelizerc file
+ */
+import { config } from '../../config/config.js'
 
 const USER = encodeURIComponent(config.dbUser)
 const PASSWORD = encodeURIComponent(config.dbPassword)
 
-export const URI = `postgres://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${config.dbName}`
+const URI = `postgres://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${config.dbName}`
 
 export default {
   development: {

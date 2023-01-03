@@ -1,5 +1,10 @@
 import { Sequelize } from 'sequelize'
-import { URI } from '../db/config.js'
+import { config } from '../config/config.js'
+
+const USER = encodeURIComponent(config.dbUser)
+const PASSWORD = encodeURIComponent(config.dbPassword)
+
+const URI = `postgres://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${config.dbName}`
 
 /**
  * Setup the ORM sequelize
@@ -12,7 +17,7 @@ const sequelize = new Sequelize(URI, {
 
 async function executeAfterSequelizeInitialization () {
   await sequelize.authenticate()
-  const { setupRelations } = await import('../db/relations.js')
+  const { setupRelations } = await import('../db/config/relations.js')
   setupRelations()
 }
 
