@@ -1,5 +1,6 @@
 import { Category } from '../models/category.model.js'
 import { Customer } from '../models/customer.model.js'
+import { OrderProducts } from '../models/order-product.js'
 import { Order } from '../models/order.model.js'
 import { Product } from '../models/product.model.js'
 import { User } from '../models/user.model.js'
@@ -32,4 +33,13 @@ export function setupRelations () {
   })
 
   Order.belongsTo(Customer, { as: 'customer' })
+
+  Order.belongsToMany(Product, {
+    as: 'items',
+    through: OrderProducts
+  })
+  Product.belongsToMany(Order, {
+    as: 'items',
+    through: OrderProducts
+  })
 }
