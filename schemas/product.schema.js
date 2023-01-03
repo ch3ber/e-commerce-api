@@ -1,28 +1,38 @@
 // @ts-check
 import Joi from 'joi'
 
-const id = Joi.string().uuid()
+// schema for validate a product in the API
+
+// JSON body values
+const id = Joi.number().integer()
 const name = Joi.string().min(3).max(15)
 const price = Joi.number().integer().min(10)
 const image = Joi.string().uri()
 const description = Joi.string().min(10)
 
-const createProductSchema = Joi.object({
+// schema for validate the POST method
+export const createProductSchema = Joi.object({
   name: name.required(),
   price: price.required(),
   image: image.required(),
-  description: description.required()
+  description: description.required(),
+  categoryId: id.required()
 })
 
-const updateProductSchema = Joi.object({
+// schema for validate the PUT method
+export const updateProductSchema = Joi.object({
   name,
   price,
   image,
   description
 })
 
-const getProductSchema = Joi.object({
+// schema for validate the GET method
+export const getProductSchema = Joi.object({
   id: id.required()
 })
 
-export { createProductSchema, updateProductSchema, getProductSchema }
+// schema for validate the DELETE method
+export const deleteProductSchema = Joi.object({
+  id: id.required()
+})
