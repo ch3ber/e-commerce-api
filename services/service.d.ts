@@ -1,5 +1,5 @@
 // @ts-check
-import { ModelCtor, Model, Optional, Identifier } from "sequelize";
+import { ModelCtor, Model, Optional, Identifier } from "sequelize/types";
 
 /**
  * All basic methods to create a basic service
