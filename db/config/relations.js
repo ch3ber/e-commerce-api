@@ -36,10 +36,14 @@ export function setupRelations () {
 
   Order.belongsToMany(Product, {
     as: 'items',
-    through: OrderProducts
+    through: OrderProducts,
+    foreignKey: 'orderId',
+    otherKey: 'productId'
   })
   Product.belongsToMany(Order, {
     as: 'items',
-    through: OrderProducts
+    through: OrderProducts,
+    foreignKey: 'productId',
+    otherKey: 'orderId'
   })
 }
