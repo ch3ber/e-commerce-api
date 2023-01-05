@@ -6,12 +6,12 @@ import { OrderProducts } from '../db/models/order-product.js'
 
 /**
  * Model to use in the OrderService instance
- * @typedef {import('../db/models/order.model.js').Order} OrderModel'
+ * @typedef {import('../db/models/order.model.js').Order} OrderModel
  * Model to use in the OrderProductsService instance
- * @typedef {import('../db/models/order-product.js').OrderProducts} OrderProductsModel'
+ * @typedef {import('../db/models/order-product.js').OrderProducts} OrderProductsModel
  * Interface implemented for OrderProductsService
  * @typedef {import('./service.js').CreateableService} CreateableService
- * @typedef {import('sequelize/types').Model} Model'
+ * @typedef {import('sequelize/types').Model} Model
  */
 
 /**

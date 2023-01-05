@@ -10,6 +10,15 @@ const price = Joi.number().integer().min(10)
 const image = Joi.string().uri()
 const description = Joi.string().min(10)
 
+// query params values
+const limit = Joi.number().integer().min(1)
+const offset = Joi.number().integer().min(0)
+const searchInDescription = Joi.string().min(1)
+const searchInName = Joi.string().min(1)
+const sortBy = Joi.string().min(1)
+const minPrice = Joi.number().integer().min(0)
+const maxPrice = Joi.number().integer().min(0)
+
 // schema for validate the POST method
 export const createProductSchema = Joi.object({
   name: name.required(),
@@ -36,3 +45,21 @@ export const getProductSchema = Joi.object({
 export const deleteProductSchema = Joi.object({
   id: id.required()
 })
+
+// schema for validate the query params
+export const queryProductSchema = Joi.object({
+  limit,
+  offset,
+  searchInDescription,
+  searchInName,
+  sortBy,
+  minPrice,
+  maxPrice
+})
+
+/** hacer obligatorio el envio de minPrice y maxPrice juntos
+maxPrice: maxPrice.when('minPrice', {
+  is: Joi.exist(),
+  then: Joi.required()
+})
+*/

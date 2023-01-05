@@ -2,18 +2,21 @@ import express from 'express'
 
 import { productService } from './../services/product.service.js'
 import validatorHandler from './../middlewares/validator.handler.js'
-import { createProductSchema, updateProductSchema, getProductSchema } from './../schemas/product.schema.js'
+import { createProductSchema, updateProductSchema, getProductSchema, queryProductSchema } from './../schemas/product.schema.js'
 
 const router = express.Router()
 
-router.get('/', async (req, res, next) => {
-  try {
-    const products = await productService.find()
-    res.json(products)
-  } catch (error) {
-    next(error)
-  }
-})
+router.get('/',
+  validatorHandler(queryProductSchema, 'query'),
+  async (req, res, next) => {
+    try {
+      console.log(req.query)
+      const products = await productService.find(req.query)
+      res.json(products)
+    } catch (error) {
+      next(error)
+    }
+  })
 
 router.get('/:id',
   validatorHandler(getProductSchema, 'params'),
