@@ -36,6 +36,7 @@ const orderSchema = {
   total: {
     type: DataTypes.VIRTUAL,
     get () {
+      if (!this.items) return 0
       if (this.items.length === 0) return 0
 
       return this.items.reduce((total, item) => {
