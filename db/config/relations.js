@@ -1,9 +1,9 @@
-import { Category } from '../models/category.model.js'
-import { Customer } from '../models/customer.model.js'
-import { OrderProducts } from '../models/order-product.js'
-import { Order } from '../models/order.model.js'
-import { Product } from '../models/product.model.js'
 import { User } from '../models/user.model.js'
+import { Customer } from '../models/customer.model.js'
+import { Category } from '../models/category.model.js'
+import { Product } from '../models/product.model.js'
+import { Order } from '../models/order.model.js'
+import { OrderProducts } from '../models/order-product.js'
 
 /**
  * Setup all the relations into the db
