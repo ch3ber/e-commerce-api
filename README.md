@@ -37,9 +37,16 @@ Start the server
   npm run start
 ```
 
+## Live demo
+
+[Demo Link](https://ch3ber.github.io)
+
+
 ## API Reference
 
 Base URL: `http://localhost:3000/api/v1`
+
+To more info see the [swagger docs](https://ch3ber.github.io)
 
 | End points    | Description               |
 | :-------------| :-------------------------|
@@ -49,47 +56,21 @@ Base URL: `http://localhost:3000/api/v1`
 | `/customers`  | Acces to customers schema |
 | `/orders`     | Acces to orders schema    |
 
-#### Get all products
-
-```http
-  GET /products
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `limit`      | `string` | **Required**. Id of item to fetch |
-
-#### Get product
-
-```http
-  GET /product/${id}
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of item to fetch |
-
-Takes two numbers and returns the sum.
-
-
-## Screenshots
-
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
-
-## Demo
-
-[Demo Link](https://ch3ber.github.io/linktree)
-
 
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`API_KEY`
+You have a template in `.env.exmaple` file
 
-`ANOTHER_API_KEY`
-
+```
+PORT=
+DB_USER=''
+DB_PASSWORD=''
+DB_HOST=''
+DB_NAME=''
+DB_PORT=''
+```
 
 ## Authors
 
