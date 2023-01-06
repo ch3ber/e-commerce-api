@@ -2,9 +2,13 @@
 import express from 'express'
 import cors from 'cors'
 import routerApi from './routes/index.js'
+import swaggerUi from 'swagger-ui-express'
+import YAML from 'yamljs'
 
 // import error middlewares
 import { logErrors, errorHandler, boomErrorHandler, ormErrorHandler } from './middlewares/error.handler.js'
+
+const swaggerDocument = YAML.load('./swagger.yaml')
 
 // init the express app
 const app = express()
@@ -12,6 +16,8 @@ const port = process.env.PORT
 
 // middleware to show the outputs in JSON format
 app.use(express.json())
+// middleware to document the API
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
 // cors config
 const whitelist = ['http://localhost:8080', 'https://myapp.co']
