@@ -10,5 +10,10 @@ export const config = {
   dbHost: process.env.DB_HOST,
   dbName: process.env.DB_NAME,
   dbPort: process.env.DB_PORT,
-  dbUrl: process.env.DATABASE_URL
+  dbUrl: process.env.DB_URL
 }
+
+export const USER = encodeURIComponent(config.dbUser)
+export const PASSWORD = encodeURIComponent(config.dbPassword)
+
+export const URI = config.dbUrl || `postgres://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${config.dbName}`
