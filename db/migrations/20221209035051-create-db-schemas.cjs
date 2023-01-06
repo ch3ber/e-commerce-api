@@ -73,7 +73,7 @@ module.exports = {
         type: DataTypes.INTEGER,
         unique: true,
         references: {
-          model: User,
+          model: User.tableName,
           key: 'id'
         },
         onUpdate: 'CASCADE',
