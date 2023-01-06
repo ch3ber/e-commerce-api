@@ -1,5 +1,5 @@
 
-# E-Commerce's Rest API
+# E-Commerce Rest API
 
 E-commerce CRUD with **postgresql** and **express.js**.
 The API's DB is preconfigurated in a docker container.
