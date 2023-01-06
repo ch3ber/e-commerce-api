@@ -6,7 +6,7 @@ import { Customer } from './customer.model.js'
  * Represent a schema in the DB
  * @constant {Object}
  */
-export const orderSchema = {
+export const migrationOrderSchema = {
   id: {
     allowNull: false,
     autoIncrement: true,
@@ -28,7 +28,11 @@ export const orderSchema = {
     type: DataTypes.DATE,
     field: 'create_at',
     defaultValue: Sequelize.NOW
-  },
+  }
+}
+
+const orderSchema = {
+  ...migrationOrderSchema,
   total: {
     type: DataTypes.VIRTUAL,
     get () {
