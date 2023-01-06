@@ -10,13 +10,13 @@ To run the project locally follow the next steps.
 Clone the project
 
 ```bash
-  git clone https://github.com/ch3ber/postgresql-crud
+  git clone https://github.com/ch3ber/e-commer-api
 ```
 
 Go to the project directory
 
 ```bash
-  cd postgresql-crud
+  cd e-commer-api
 ```
 
 Install dependencies
