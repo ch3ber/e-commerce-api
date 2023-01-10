@@ -10,7 +10,8 @@ export const config = {
   dbHost: process.env.DB_HOST,
   dbName: process.env.DB_NAME,
   dbPort: process.env.DB_PORT,
-  dbUrl: process.env.DB_URL
+  dbUrl: process.env.DB_URL,
+  jwtSecret: process.env.JWT_SECRET
 }
 
 export const USER = encodeURIComponent(config.dbUser)
