@@ -1,5 +1,6 @@
 import { DataTypes, Sequelize } from 'sequelize'
 import sequelize from '../../libs/sequelize.js'
+import bcrypt from 'bcryptjs'
 
 /**
  * Represent a schema in the DB
@@ -38,5 +39,23 @@ export const userSchema = {
  * Represents a user in the DB
  */
 export const User = sequelize.define('User', userSchema, {
-  timestamps: false
+  timestamps: false,
+  hooks: {
+    beforeCreate: async (user, options) => {
+      user.password = await bcrypt.hash(user.password, 10)
+    }
+  },
+  defaultScope: {
+
+    attributes: {
+      exclude: ['password']
+    }
+  },
+  scopes: {
+    withPassword: {
+      attributes: {
+        include: ['password']
+      }
+    }
+  }
 })
