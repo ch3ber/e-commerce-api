@@ -1,5 +1,5 @@
 import { DataTypes, Sequelize } from 'sequelize'
-import sequelize from '#libs/sequelize.js'
+import sequelize from '../../libs/sequelize.js'
 
 /**
  * Represent a schema in the DB
