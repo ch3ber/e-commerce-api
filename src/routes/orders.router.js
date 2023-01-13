@@ -1,9 +1,9 @@
 import express from 'express'
 
-import { orderService, orderProductsService } from './../services/order.service.js'
+import { orderService, orderProductsService } from '#services/order.service.js'
 
-import validatorHandler from './../middlewares/validator.handler.js'
-import { getOrderSchema, createOrderSchema, addItemSchema, deleteItemSchema } from '../schemas/order.schema.js'
+import validatorHandler from '#middlewares/validator.handler.js'
+import { getOrderSchema, createOrderSchema, addItemSchema, deleteItemSchema } from '#schemas/order.schema.js'
 
 const router = express.Router()
 

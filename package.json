@@ -34,6 +34,16 @@
     "url": "https://github.com/ch3ber/e-commer-api/issues"
   },
   "homepage": "https://github.com/ch3ber/e-commer-api#readme",
+  "imports": {
+    "#config/*.js": "./config/*.js",
+    "#db/*.js": "./db/*.js",
+    "#libs/*.js": "./libs/*.js",
+    "#routes/*.js": "./src/routes/*.js",
+    "#middlewares/*.js": "./src/middlewares/*.js",
+    "#schemas/*.js": "./src/schemas/*.js",
+    "#services/*.js": "./src/services/*.js",
+    "#utils/*.js": "./src/utils/*.js"
+  },
   "devDependencies": {
     "@babel/core": "7.20.7",
     "@babel/plugin-transform-async-to-generator": "7.20.7",

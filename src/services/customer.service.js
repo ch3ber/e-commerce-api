@@ -1,6 +1,6 @@
 // @ts-check
 import { MakeBaseServiceFrom } from './MakeBasicServiceFrom.js'
-import { Customer } from '../db/models/customer.model.js'
+import { Customer } from '#db/models/customer.model.js'
 
 class CustomerService extends MakeBaseServiceFrom {
   async find () {

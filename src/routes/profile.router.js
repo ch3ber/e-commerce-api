@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import passport from 'passport'
-import { orderService } from '../services/order.service.js'
+import { orderService } from '#services/order.service.js'
 
 const router = new Router()
 

@@ -1,15 +1,15 @@
 // @ts-check
 import express from 'express'
 import cors from 'cors'
-import routerApi from './routes/index.js'
+import routerApi from '#routes/index.js'
 import swaggerUi from 'swagger-ui-express'
 import YAML from 'yamljs'
 
 // import error middlewares
-import { logErrors, errorHandler, boomErrorHandler, ormErrorHandler } from './middlewares/error.handler.js'
+import { logErrors, errorHandler, boomErrorHandler, ormErrorHandler } from '#middlewares/error.handler.js'
 
 // Enable authentication and authorization
-import './utils/auth/index.js'
+import '#utils/auth/index.js'
 
 const swaggerDocument = YAML.load('./swagger.yaml')
 

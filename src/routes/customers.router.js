@@ -1,12 +1,12 @@
 import express from 'express'
-import { customerService } from '../services/customer.service.js'
-import validationHandler from '../middlewares/validator.handler.js'
+import { customerService } from '#services/customer.service.js'
+import validationHandler from '#middlewares/validator.handler.js'
 
 import {
   createCustomerSchema,
   getCustomerSchema,
   updateCustomerSchema
-} from '../schemas/customer.schema.js'
+} from '#schemas/customer.schema.js'
 
 const router = express.Router()
 

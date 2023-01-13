@@ -1,14 +1,14 @@
 // @ts-check
 import boom from '@hapi/boom'
 import { MakeBaseServiceFrom } from './MakeBasicServiceFrom.js'
-import { Order } from '../db/models/order.model.js'
-import { OrderProducts } from '../db/models/order-product.js'
+import { Order } from '#db/models/order.model.js'
+import { OrderProducts } from '#db/models/order-product.js'
 
 /**
  * Model to use in the OrderService instance
- * @typedef {import('../db/models/order.model.js').Order} OrderModel
+ * @typedef {import('#db/models/order.model.js').Order} OrderModel
  * Model to use in the OrderProductsService instance
- * @typedef {import('../db/models/order-product.js').OrderProducts} OrderProductsModel
+ * @typedef {import('#db/models/order-product.js').OrderProducts} OrderProductsModel
  * Interface implemented for OrderProductsService
  * @typedef {import('./service.js').CreateableService} CreateableService
  * @typedef {import('sequelize/types').Model} Model
@@ -48,7 +48,7 @@ export const orderProductsService = new OrderProductsService(OrderProducts)
  * @name OrderService
  * @extends MakeBaseServiceFrom
  * @constructor - constructor inherited by parent class
- * @param {import('../db/models/order.model').Order} OrderModel - model to create the service
+ * @param {import('#db/models/order.model').Order} OrderModel - model to create the service
  */
 export class OrderService extends MakeBaseServiceFrom {
   /**

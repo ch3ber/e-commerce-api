@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize'
-import { URI } from '../config/config.js'
+import { URI } from '#config/config.js'
 
 /**
  * Setup the ORM sequelize
@@ -12,7 +12,7 @@ const sequelize = new Sequelize(URI, {
 
 async function executeAfterSequelizeInitialization () {
   await sequelize.authenticate()
-  const { setupRelations } = await import('../db/config/relations.js')
+  const { setupRelations } = await import('#db/config/relations.js')
   setupRelations()
 }
 

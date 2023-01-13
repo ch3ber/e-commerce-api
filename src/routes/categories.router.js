@@ -1,10 +1,10 @@
 import express from 'express'
 
-import { categoryService } from './../services/category.service.js'
-import validatorHandler from './../middlewares/validator.handler.js'
-import { createCategorySchema, updateCategorySchema, getCategorySchema } from './../schemas/category.schema.js'
+import { categoryService } from '#services/category.service.js'
+import validatorHandler from '#middlewares/validator.handler.js'
+import { createCategorySchema, updateCategorySchema, getCategorySchema } from '#schemas/category.schema.js'
 import passport from 'passport'
-import { checkRoles } from '../middlewares/auth.handler.js'
+import { checkRoles } from '#middlewares/auth.handler.js'
 
 const router = express.Router()
 

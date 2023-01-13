@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { MakeBaseServiceFrom } from './MakeBasicServiceFrom.js'
-import { Product } from '../db/models/product.model.js'
+import { Product } from '#db/models/product.model.js'
 import { Op } from 'sequelize'
 
 /**
