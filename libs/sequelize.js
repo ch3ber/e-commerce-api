@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize'
-import { URI } from '#config/config.js'
+import { URI } from '../config/config.js'
 
 /**
  * Setup the ORM sequelize
