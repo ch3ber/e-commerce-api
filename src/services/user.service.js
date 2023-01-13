@@ -16,6 +16,11 @@ class UserService extends MakeBaseServiceFrom {
     const response = await User.findAll({ include: 'customer' })
     return response
   }
+
+  async findByEmail (email) {
+    const response = await User.findOne({ where: email })
+    return response
+  }
 }
 
 const userService = new UserService(User)

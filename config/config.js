@@ -11,7 +11,10 @@ export const config = {
   dbName: process.env.DB_NAME,
   dbPort: process.env.DB_PORT,
   dbUrl: process.env.DB_URL,
-  jwtSecret: process.env.JWT_SECRET
+  jwtSecret: process.env.JWT_SECRET,
+  recoveryServiceHost: process.env.RECOVERY_SERVICE_HOST,
+  recoveryServiceEmail: process.env.RECOVERY_SERVICE_EMAIL,
+  recoveryServicePassword: process.env.RECOVERY_SERVICE_EMAIL_PASSWORD
 }
 
 export const USER = encodeURIComponent(config.dbUser)
