@@ -9,10 +9,8 @@ export class SignJWTFromUser {
       ...payload
     }
 
-    const token = jwt.sign(jwtPayload, secret)
-    return {
-      user,
-      token
-    }
+    const token = jwt.sign(jwtPayload, secret, { expiresIn: '10min' })
+
+    return token
   }
 }

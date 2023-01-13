@@ -1,10 +1,12 @@
 import { config } from '#config/config.js'
+import { SaveUserJWT } from '../../JWT/saveUserJWT.js'
 import { EmailSender } from '../emailSender.js'
 import { GenerateRecoveryLink } from './generateRecoveryLink.js'
 
 export class SendRecoveryPasswordLink {
   static async send (userEmail) {
-    const recoveryLink = await GenerateRecoveryLink.generate(userEmail)
+    const { recoveryLink, token } = await GenerateRecoveryLink.generate(userEmail)
+    SaveUserJWT.save({ userEmail, token })
 
     const emailBody = {
       from: config.recoveryServiceEmail,

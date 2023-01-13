@@ -1,10 +1,10 @@
 import { config } from '#config/config.js'
 import { SignJWTFromUser } from '../../JWT/signJWTFromUser.js'
-import { FindUserByEmail } from '#utils/email/findUserByEmail.js'
+import { userService } from '#services/user.service.js'
 
 export class GenerateRecoveryLink {
   static async generate (userEmail) {
-    const user = await FindUserByEmail.find(userEmail)
+    const user = await userService.findByEmail(userEmail)
 
     const token = SignJWTFromUser.sign({
       user,
@@ -14,6 +14,9 @@ export class GenerateRecoveryLink {
     const APP_DOMAIN = 'https://ch3ber.github.io'
     const recoveryLink = `${APP_DOMAIN}?recoverytk=${token}`
 
-    return recoveryLink
+    return {
+      recoveryLink,
+      token
+    }
   }
 }

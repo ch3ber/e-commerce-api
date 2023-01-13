@@ -1,6 +1,7 @@
 // @ts-check
 import { User } from '#db/models/user.model.js'
 import { MakeBaseServiceFrom } from './MakeBasicServiceFrom.js'
+import boom from '@hapi/boom'
 
 // const UserService = new MakeBaseServiceFrom(User)
 /**
@@ -18,8 +19,13 @@ class UserService extends MakeBaseServiceFrom {
   }
 
   async findByEmail (email) {
-    const response = await User.findOne({ where: email })
-    return response
+    const user = await User.findOne({ where: { email } })
+
+    if (!user) {
+      throw boom.notFound('User not found')
+    }
+
+    return user
   }
 }
 
