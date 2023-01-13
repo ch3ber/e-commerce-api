@@ -15,6 +15,8 @@ export class GetAuthUser {
     if (!isMatch) {
       throw boom.unauthorized()
     }
+
+    delete user.dataValues.password
     return user
   }
 }
