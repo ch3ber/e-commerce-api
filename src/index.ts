@@ -1,4 +1,3 @@
-// @ts-check
 import express from 'express'
 import cors from 'cors'
 import routerApi from '#routes/index.js'
