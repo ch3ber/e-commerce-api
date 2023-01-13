@@ -51,15 +51,24 @@ export const User = sequelize.define('User', userSchema, {
     }
   },
   defaultScope: {
-
     attributes: {
-      exclude: ['password']
+      exclude: ['password', 'recoveryToken']
     }
   },
   scopes: {
     withPassword: {
       attributes: {
         include: ['password']
+      }
+    },
+    withRecoveryToken: {
+      attributes: {
+        include: ['recoveryToken']
+      }
+    },
+    withAll: {
+      attributes: {
+        include: ['password', 'recoveryToken']
       }
     }
   }

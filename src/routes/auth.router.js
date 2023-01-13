@@ -3,6 +3,7 @@ import passport from 'passport'
 
 import { SignJWTFromUser } from '../utils/JWT/signJWTFromUser.js'
 import { SendRecoveryPasswordLink } from '../utils/email/recovery/sendRecoveryPasswordLink.js'
+import { ChangeUserPassword } from '../utils/auth/changeUserPassword.js'
 
 const router = express.Router()
 
@@ -35,5 +36,16 @@ router.post('/recovery',
     }
   }
 )
+
+router.post('/change-password',
+  async (req, res, next) => {
+    try {
+      const { token, password } = req.body
+      const response = await ChangeUserPassword.change(token, password)
+      res.json(response)
+    } catch (error) {
+      next(error)
+    }
+  })
 
 export default router
