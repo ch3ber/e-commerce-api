@@ -73,6 +73,31 @@ export class OrderService extends MakeBaseServiceFrom {
    * @param {number} id - id of the object to find
    * @returns {Promise<OrderModel>} - object found in the DB
    */
+  async findAllByUser (id) {
+    const data = await this.__model.findAll({
+      where: {
+        '$customer.user.id$': id
+      },
+      include: [
+        {
+          association: 'customer',
+          include: ['user']
+        },
+        'items'
+      ]
+    })
+
+    if (!data) {
+      throw boom.notFound('Data not found')
+    }
+    return data
+  }
+
+  /**
+   * Find an object from the DB
+   * @param {number} id - id of the object to find
+   * @returns {Promise<OrderModel>} - object found in the DB
+   */
   async findOne (id) {
     const data = await this.__model.findByPk(id, {
       include: [
