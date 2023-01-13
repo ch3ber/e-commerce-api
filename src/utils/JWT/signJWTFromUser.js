@@ -3,12 +3,13 @@ import jwt from 'jsonwebtoken'
 import { config } from '#config/config.js'
 
 export class SignJWTFromUser {
-  static sign (user) {
-    const payload = {
+  static sign ({ user, payload = {}, secret = config.jwtSecret }) {
+    const jwtPayload = {
       sub: user.id,
-      role: user.role
+      ...payload
     }
-    const token = jwt.sign(payload, config.jwtSecret)
+
+    const token = jwt.sign(jwtPayload, secret)
     return {
       user,
       token

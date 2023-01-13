@@ -12,6 +12,7 @@ export const config = {
   dbPort: process.env.DB_PORT,
   dbUrl: process.env.DB_URL,
   jwtSecret: process.env.JWT_SECRET,
+  jwtRecoverySecret: process.env.JWT_RECOVERY_SECRET,
   recoveryServiceHost: process.env.RECOVERY_SERVICE_HOST,
   recoveryServiceEmail: process.env.RECOVERY_SERVICE_EMAIL,
   recoveryServicePassword: process.env.RECOVERY_SERVICE_EMAIL_PASSWORD
