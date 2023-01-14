@@ -2,16 +2,16 @@
 
 const { DataTypes } = require('sequelize')
 
+const { User } = require('../models/user.model.js')
+const { Customer } = require('../models/customer.model.js')
+const { Category } = require('../models/category.model.js')
+const { Product } = require('../models/product.model.js')
+const { Order } = require('../models/order.model.js')
+const { OrderProducts } = require('../models/order-product.js')
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    const { User } = await import('../models/user.model.js')
-    const { Customer } = await import('../models/customer.model.js')
-    const { Category } = await import('../models/category.model.js')
-    const { Product } = await import('../models/product.model.js')
-    const { Order } = await import('../models/order.model.js')
-    const { OrderProducts } = await import('../models/order-product.js')
-
+  async up (queryInterface, _Sequelize) {
     await queryInterface.createTable(User.tableName, {
       id: {
         allowNull: false,
@@ -28,6 +28,11 @@ module.exports = {
         allowNull: false,
         type: DataTypes.STRING
       },
+      recoveryToken: {
+        field: 'recovery_token',
+        allowNull: true,
+        type: DataTypes.STRING
+      },
       role: {
         allowNull: false,
         type: DataTypes.STRING,
@@ -37,7 +42,7 @@ module.exports = {
         allowNull: false,
         type: DataTypes.DATE,
         field: 'create_at',
-        defaultValue: Sequelize.NOW
+        defaultValue: DataTypes.NOW
       }
     })
 
@@ -65,7 +70,7 @@ module.exports = {
         allowNull: false,
         type: DataTypes.DATE,
         field: 'create_at',
-        defaultValue: Sequelize.NOW
+        defaultValue: DataTypes.NOW
       },
       userId: {
         field: 'user_id',
@@ -101,7 +106,7 @@ module.exports = {
         allowNull: false,
         type: DataTypes.DATE,
         field: 'created_at',
-        defaultValue: Sequelize.NOW
+        defaultValue: DataTypes.NOW
       }
     })
 
@@ -132,7 +137,7 @@ module.exports = {
         allowNull: false,
         type: DataTypes.DATE,
         field: 'created_at',
-        defaultValue: Sequelize.NOW
+        defaultValue: DataTypes.NOW
       },
       categoryId: {
         field: 'category_id',
@@ -168,7 +173,7 @@ module.exports = {
         allowNull: false,
         type: DataTypes.DATE,
         field: 'create_at',
-        defaultValue: Sequelize.NOW
+        defaultValue: DataTypes.NOW
       }
     })
 
@@ -207,19 +212,12 @@ module.exports = {
         allowNull: false,
         type: DataTypes.DATE,
         field: 'create_at',
-        defaultValue: Sequelize.NOW
+        defaultValue: DataTypes.NOW
       }
     })
   },
 
-  async down (queryInterface, Sequelize) {
-    const { User } = await import('../models/user.model.js')
-    const { Customer } = await import('../models/customer.model.js')
-    const { Category } = await import('../models/category.model.js')
-    const { Product } = await import('../models/product.model.js')
-    const { Order } = await import('../models/order.model.js')
-    const { OrderProducts } = await import('../models/order-product.js')
-
+  async down (queryInterface, _Sequelize) {
     await queryInterface.dropTable(User.tableName)
     await queryInterface.dropTable(Customer.tableName)
     await queryInterface.dropTable(Category.tableName)

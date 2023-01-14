@@ -8,9 +8,12 @@ class Postgres {
      */
   async #connect () {
     try {
+      // @ts-ignore
       if (!Postgres.connection) {
+      // @ts-ignore
         Postgres.connection = new PostgresClient()
       }
+      // @ts-ignore
       return Postgres.connection
     } catch (error) {
       console.log(error)

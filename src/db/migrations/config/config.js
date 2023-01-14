@@ -1,6 +1,6 @@
-import { URI } from '../../config/config'
+const { URI } = require('../../../config/config')
 
-export default {
+module.exports = {
   development: {
     url: URI,
     dialect: 'postgres'

@@ -1,4 +1,4 @@
-import { User } from '@db/models/user.model'
+import { User } from './models/user.model'
 import { Customer } from './models/customer.model'
 import { Category } from './models/category.model'
 import { Product } from './models/product.model'
