@@ -1,6 +1,6 @@
-// @ts-check
-import { User } from '#db/models/user.model.js'
-import { MakeBaseServiceFrom } from './MakeBasicServiceFrom.js'
+
+import { User } from '@db/models/user.model'
+import { MakeBaseServiceFrom } from './MakeBasicServiceFrom'
 import boom from '@hapi/boom'
 
 // const UserService = new MakeBaseServiceFrom(User)

@@ -1,7 +1,7 @@
-import { config } from '#config/config.js'
-import { SaveUserJWT } from '../../JWT/saveUserJWT.js'
-import { EmailSender } from '../emailSender.js'
-import { GenerateRecoveryLink } from './generateRecoveryLink.js'
+import { config } from '@config/config'
+import { SaveUserJWT } from '@utils/JWT/saveUserJWT'
+import { EmailSender } from '../emailSender'
+import { GenerateRecoveryLink } from './generateRecoveryLink'
 
 export class SendRecoveryPasswordLink {
   static async send (userEmail) {

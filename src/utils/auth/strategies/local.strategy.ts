@@ -1,6 +1,6 @@
 import LocalStrategy from 'passport-local'
 
-import { GetAuthUser } from '../getAuthUser.js'
+import { GetAuthUser } from '../getAuthUser'
 
 export const localStrategy = new LocalStrategy(
   {

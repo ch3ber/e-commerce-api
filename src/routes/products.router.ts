@@ -1,8 +1,8 @@
 import express from 'express'
 
-import { productService } from '#services/product.service.js'
-import validatorHandler from '#middlewares/validator.handler.js'
-import { createProductSchema, updateProductSchema, getProductSchema, queryProductSchema } from '#schemas/product.schema.js'
+import { productService } from '@services/product.service'
+import validatorHandler from '@middlewares/validator.handler'
+import { createProductSchema, updateProductSchema, getProductSchema, queryProductSchema } from '@schemas/product.schema'
 
 const router = express.Router()
 

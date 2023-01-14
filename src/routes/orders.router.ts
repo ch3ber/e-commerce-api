@@ -1,13 +1,13 @@
 import express from 'express'
 
-import { orderService, orderProductsService } from '#services/order.service.js'
+import { orderService, orderProductsService } from '@services/order.service'
 
-import validatorHandler from '#middlewares/validator.handler.js'
-import { getOrderSchema, createOrderSchema, addItemSchema, deleteItemSchema } from '#schemas/order.schema.js'
+import validatorHandler from '@middlewares/validator.handler'
+import { getOrderSchema, createOrderSchema, addItemSchema } from '@schemas/order.schema'
 
 const router = express.Router()
 
-router.get('/', async (req, res, next) => {
+router.get('/', async (_req, res, next) => {
   try {
     const categories = await orderService.find()
     res.json(categories)

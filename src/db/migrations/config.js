@@ -1,8 +1,4 @@
-/**
- * db/config.js
- * Config for .sequelizerc file
- */
-import { URI } from '../../config/config.js'
+import { URI } from '../../config/config'
 
 export default {
   development: {

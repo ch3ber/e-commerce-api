@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
 
-import { config } from '#config/config.js'
+import { config } from '@config/config'
 
 export class SignJWTFromUser {
   static sign ({ user, payload = {}, secret = config.jwtSecret }) {
@@ -9,6 +9,7 @@ export class SignJWTFromUser {
       ...payload
     }
 
+    // @ts-ignore
     const token = jwt.sign(jwtPayload, secret, { expiresIn: '10min' })
 
     return token

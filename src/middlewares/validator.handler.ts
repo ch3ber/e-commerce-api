@@ -1,4 +1,4 @@
-// @ts-check
+
 import boom from '@hapi/boom'
 
 /** @typedef {import('../node_modules/joi/lib/index.d.js').ObjectSchema} JoiObject */
@@ -11,7 +11,7 @@ import boom from '@hapi/boom'
  * @returns {Function} middleware function
  */
 function validatorHandler (schema, property) {
-  return (req, res, next) => {
+  return (req, _res, next) => {
     const data = req[property]
     const { error } = schema.validate(data, { abortEarly: false })
     if (error) {

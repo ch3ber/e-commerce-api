@@ -1,6 +1,6 @@
-import { DataTypes, Sequelize } from 'sequelize'
-import sequelize from '../../libs/sequelize.js'
-import { User } from './user.model.js'
+import { DataTypes } from 'sequelize'
+import sequelize from '../../libs/sequelize'
+import { User } from './user.model'
 
 /**
  * Represent a schema in the DB
@@ -30,7 +30,7 @@ export const customerSchema = {
     allowNull: false,
     type: DataTypes.DATE,
     field: 'create_at',
-    defaultValue: Sequelize.NOW
+    defaultValue: DataTypes.NOW
   },
   userId: {
     field: 'user_id',

@@ -1,4 +1,4 @@
-// @ts-check
+
 import Joi from 'joi'
 
 // schema for validating a order in the API

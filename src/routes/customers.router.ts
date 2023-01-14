@@ -1,16 +1,16 @@
 import express from 'express'
-import { customerService } from '#services/customer.service.js'
-import validationHandler from '#middlewares/validator.handler.js'
+import { customerService } from '@services/customer.service'
+import validationHandler from '@middlewares/validator.handler'
 
 import {
   createCustomerSchema,
   getCustomerSchema,
   updateCustomerSchema
-} from '#schemas/customer.schema.js'
+} from '@schemas/customer.schema'
 
 const router = express.Router()
 
-router.get('/', async (req, res, next) => {
+router.get('/', async (_req, res, next) => {
   try {
     res.json(await customerService.find())
   } catch (error) {

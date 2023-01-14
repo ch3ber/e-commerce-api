@@ -1,5 +1,5 @@
-import { DataTypes, Sequelize } from 'sequelize'
-import sequelize from '../../libs/sequelize.js'
+import { DataTypes } from 'sequelize'
+import sequelize from '../../libs/sequelize'
 import bcrypt from 'bcryptjs'
 
 /**
@@ -36,7 +36,7 @@ export const userSchema = {
     allowNull: false,
     type: DataTypes.DATE,
     field: 'create_at',
-    defaultValue: Sequelize.NOW
+    defaultValue: DataTypes.NOW
   }
 }
 
@@ -46,7 +46,8 @@ export const userSchema = {
 export const User = sequelize.define('User', userSchema, {
   timestamps: false,
   hooks: {
-    beforeCreate: async (user, options) => {
+    beforeCreate: async (user, _options) => {
+      // @ts-ignore
       user.password = await bcrypt.hash(user.password, 10)
     }
   },

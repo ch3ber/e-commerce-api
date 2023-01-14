@@ -1,7 +1,7 @@
 import boom from '@hapi/boom'
 import bcrypt from 'bcryptjs'
 
-import { User } from '#db/models/user.model.js'
+import { User } from '@db/models/user.model'
 
 export class GetAuthUser {
   static async get (email, password) {
@@ -11,6 +11,7 @@ export class GetAuthUser {
     if (!user) {
       throw boom.unauthorized()
     }
+    // @ts-ignore
     const isMatch = await bcrypt.compare(password, user.password)
     if (!isMatch) {
       throw boom.unauthorized()

@@ -1,9 +1,9 @@
 import express from 'express'
 import passport from 'passport'
 
-import { SignJWTFromUser } from '../utils/JWT/signJWTFromUser.js'
-import { SendRecoveryPasswordLink } from '../utils/email/recovery/sendRecoveryPasswordLink.js'
-import { ChangeUserPassword } from '../utils/auth/changeUserPassword.js'
+import { SignJWTFromUser } from '../utils/JWT/signJWTFromUser'
+import { SendRecoveryPasswordLink } from '../utils/email/recovery/sendRecoveryPasswordLink'
+import { ChangeUserPassword } from '../utils/auth/changeUserPassword'
 
 const router = express.Router()
 
@@ -15,6 +15,7 @@ router.post('/login',
       const token = SignJWTFromUser.sign({
         user,
         payload: {
+          // @ts-ignore
           role: user.role
         }
       })

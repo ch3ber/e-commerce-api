@@ -1,4 +1,4 @@
-// @ts-check
+
 import { ModelCtor, Model, Optional, Identifier, UnknownConstraintError, Op } from "sequelize/types"
 
 export interface CreateableService {

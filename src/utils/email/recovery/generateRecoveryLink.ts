@@ -1,6 +1,6 @@
-import { config } from '#config/config.js'
-import { SignJWTFromUser } from '../../JWT/signJWTFromUser.js'
-import { userService } from '#services/user.service.js'
+import { config } from '@config/config'
+import { SignJWTFromUser } from '@utils/JWT/signJWTFromUser'
+import { userService } from '@services/user.service'
 
 export class GenerateRecoveryLink {
   static async generate (userEmail) {

@@ -1,6 +1,6 @@
-import { DataTypes, Sequelize } from 'sequelize'
-import sequelize from '../../libs/sequelize.js'
-import { Category } from './category.model.js'
+import { DataTypes } from 'sequelize'
+import sequelize from '../../libs/sequelize'
+import { Category } from './category.model'
 
 /**
  * Represent a schema in the DB
@@ -33,7 +33,7 @@ export const productSchema = {
     allowNull: false,
     type: DataTypes.DATE,
     field: 'created_at',
-    defaultValue: Sequelize.NOW
+    defaultValue: DataTypes.NOW
   },
   categoryId: {
     field: 'category_id',

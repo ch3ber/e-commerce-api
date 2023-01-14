@@ -10,7 +10,7 @@ const checkAdminRoleFromJWT = (token) => {
   return jwt.decode(token)
 }
 
-export function authHandler (req, res, next) {
+export function authHandler (_req, _res, next) {
   const authToken = passport.authenticate('jwt', { session: false })
 
   if (!checkAdminRoleFromJWT(authToken)) {
@@ -20,7 +20,7 @@ export function authHandler (req, res, next) {
   next(authToken)
 }
 
-export function checkAdminRole (req, res, next) {
+export function checkAdminRole (req, _res, next) {
   const role = req.user.role
   if (role === 'admin') {
     next()
@@ -30,7 +30,7 @@ export function checkAdminRole (req, res, next) {
 }
 
 export function checkRoles (...roles) {
-  return (req, res, next) => {
+  return (req, _res, next) => {
     const user = req.user
 
     if (roles.includes(user.role)) {

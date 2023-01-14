@@ -2,15 +2,17 @@ import boom from '@hapi/boom'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcryptjs'
 
-import { config } from '#config/config.js'
-import { User } from '#db/models/user.model.js'
-import { userService } from '#services/user.service.js'
+import { config } from '@config/config'
+import { User } from '@db/models/user.model'
+import { userService } from '@services/user.service'
 
 export class ChangeUserPassword {
   static async #verifyToken (token) {
+    // @ts-ignore
     const payload = jwt.verify(token, config.jwtRecoverySecret)
     const user = await User.scope('withRecoveryToken').findByPk(payload.sub)
 
+    // @ts-ignore
     if (user.recoveryToken !== token) {
       throw boom.unauthorized()
     }

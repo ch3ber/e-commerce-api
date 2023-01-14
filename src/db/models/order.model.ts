@@ -1,6 +1,6 @@
-import { DataTypes, Sequelize } from 'sequelize'
-import sequelize from '../../libs/sequelize.js'
-import { Customer } from './customer.model.js'
+import { DataTypes } from 'sequelize'
+import sequelize from '../../libs/sequelize'
+import { Customer } from './customer.model'
 
 /**
  * Represent a schema in the DB
@@ -27,7 +27,7 @@ export const migrationOrderSchema = {
     allowNull: false,
     type: DataTypes.DATE,
     field: 'create_at',
-    defaultValue: Sequelize.NOW
+    defaultValue: DataTypes.NOW
   }
 }
 
@@ -36,9 +36,12 @@ const orderSchema = {
   total: {
     type: DataTypes.VIRTUAL,
     get () {
+      // @ts-ignore
       if (!this.items) return 0
+      // @ts-ignore
       if (this.items.length === 0) return 0
 
+      // @ts-ignore
       return this.items.reduce((total, item) => {
         return total + (item.price * item.OrderProducts.amount)
       }

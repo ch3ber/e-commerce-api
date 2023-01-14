@@ -1,23 +1,5 @@
-// @ts-check
 import boom from '@hapi/boom'
 
-/**
- * @typedef { import('./service').CreateableService } CreateableService
- * @typedef { import('./service').SearchableService } SearchableService
- * @typedef { import('./service').UpgradableService } UpgradableService
- * @typedef { import('./service').DeletableService } DeletableService
- * @typedef { import('sequelize').Model<any, any> } Model
- * @typedef { import('sequelize').ModelCtor<any> } ModelCtor
- */
-
-/**
- * Create a service with all the basic methods for a service from a model
- * @implements {CreateableService}
- * @implements {SearchableService}
- * @implements {UpgradableService}
- * @implements {DeletableService}
- * @param {ModelCtor} model - model to create the service
- */
 export class MakeBaseServiceFrom {
   __model
   constructor (model) {

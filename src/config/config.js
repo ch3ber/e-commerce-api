@@ -18,7 +18,9 @@ export const config = {
   recoveryServicePassword: process.env.RECOVERY_SERVICE_EMAIL_PASSWORD
 }
 
+// @ts-ignore
 export const USER = encodeURIComponent(config.dbUser)
+// @ts-ignore
 export const PASSWORD = encodeURIComponent(config.dbPassword)
 
 export const URI = config.dbUrl || `postgres://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${config.dbName}`
