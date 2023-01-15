@@ -110,7 +110,8 @@
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "babel.config.js"
   ],
   "ts-node": {
     // Do not forget to `npm i -D tsconfig-paths`
