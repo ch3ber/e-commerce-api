@@ -1,10 +1,10 @@
 import boom from '@hapi/boom'
 
 export class MakeBaseServiceFrom {
-  __model
-  constructor (model) {
-    this.__model = model
-  }
+  // eslint-disable-next-line no-useless-constructor
+  constructor (
+    protected model: any
+  ) {}
 
   /**
    * Create a new product from the client data
@@ -12,7 +12,7 @@ export class MakeBaseServiceFrom {
    * @returns - The new object created in the DB
    */
   async create (data) {
-    const newObject = await this.__model.create(data)
+    const newObject = await this.model.create(data)
     return newObject
   }
 
@@ -21,7 +21,7 @@ export class MakeBaseServiceFrom {
    * @returns Array of all objects in the DB
    */
   async find () {
-    const data = await this.__model.findAll()
+    const data = await this.model.findAll()
     return data
   }
 
@@ -31,7 +31,7 @@ export class MakeBaseServiceFrom {
    * @returns - object found in the DB
    */
   async findOne (id) {
-    const data = await this.__model.findByPk(id)
+    const data = await this.model.findByPk(id)
     if (!data) {
       throw boom.notFound('Data not found')
     }
@@ -50,11 +50,6 @@ export class MakeBaseServiceFrom {
     return response
   }
 
-  /**
-   * Delete a product from the DB
-   * @param {number} id - product's id in the DB
-   * @returns {Promise<{ id: number }>} - Deteled product id
-   */
   async delete (id) {
     const object = await this.findOne(id)
     object.destroy()

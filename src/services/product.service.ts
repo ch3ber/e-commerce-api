@@ -1,20 +1,11 @@
-// @ts-nocheck
-import { MakeBaseServiceFrom } from './MakeBasicServiceFrom'
 import { Product } from '@db/models/product.model'
 import { Op } from 'sequelize'
+import { ParsedQs } from 'qs'
+import { MakeBaseServiceFrom } from './MakeBasicServiceFrom'
 
-/**
- * @typedef {import('./service.js').Pagination} Pagination
- * @typedef {import('./service.js').FilterByPrice} FilterByPrice
- */
-
-/**
- * @implements {Pagination}
- * @implements {FilterByPrice}
- */
-class ProductService extends MakeBaseServiceFrom {
-  getWhereValidations (query) {
-    /** Get all queries keys to validate */
+class GetWhereValidationsFromQuery {
+  static get (query: ParsedQs) {
+    if (!query) return
     const queries = Object.keys(query)
 
     /** where clause with validations */
@@ -27,8 +18,7 @@ class ProductService extends MakeBaseServiceFrom {
      * @returns {Object} - Where clause with the new validation
      */
 
-    // hashmap with validations
-    const validations = {
+    const validationNames = {
       price: (value) => ({
         ...where,
         price: {
@@ -93,26 +83,25 @@ class ProductService extends MakeBaseServiceFrom {
      * where clause is executed
      */
     queries.forEach((queryKey) => {
-      if (validations[queryKey]) {
-        where = validations[queryKey](query[queryKey])
+      if (validationNames[queryKey]) {
+        where = validationNames[queryKey](query[queryKey])
       }
     })
 
     return where
   }
+}
 
-  /**
-   * @param {import("qs").ParsedQs} query
-   */
-  async find (query) {
+export class ProductService extends MakeBaseServiceFrom {
+  async find (query?) {
     const options = {
       include: ['category'],
       limit: query?.limit ?? 2,
       offset: query?.offset ?? 0,
-      where: this.getWhereValidations(query)
+      where: GetWhereValidationsFromQuery.get(query)
     }
 
-    const product = await this.__model.findAll(options)
+    const product = await this.model.findAll(options)
     return product
   }
 }
