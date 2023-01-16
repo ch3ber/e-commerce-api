@@ -56,7 +56,7 @@ export class OrderService extends MakeBaseServiceFrom {
    * @returns Array of all objects in the DB
    */
   async find () {
-    const data = await this.__model.findAll({
+    const data = await this.model.findAll({
       include: [
         {
           association: 'customer',
@@ -74,7 +74,7 @@ export class OrderService extends MakeBaseServiceFrom {
    * @returns {Promise<OrderModel>} - object found in the DB
    */
   async findAllByUser (id) {
-    const data = await this.__model.findAll({
+    const data = await this.model.findAll({
       where: {
         '$customer.user.id$': id
       },
@@ -99,7 +99,7 @@ export class OrderService extends MakeBaseServiceFrom {
    * @returns {Promise<OrderModel>} - object found in the DB
    */
   async findOne (id) {
-    const data = await this.__model.findByPk(id, {
+    const data = await this.model.findByPk(id, {
       include: [
         {
           association: 'customer',
