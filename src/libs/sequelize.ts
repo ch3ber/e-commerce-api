@@ -12,7 +12,7 @@ const sequelize = new Sequelize(URI, {
 })
 
 async function executeAfterSequelizeInitialization () {
-  await sequelize.authenticate()
+  await sequelize.afterInit()
   const { setupRelations } = await import('../db/relations')
   setupRelations()
 }
