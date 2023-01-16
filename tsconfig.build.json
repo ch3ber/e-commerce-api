@@ -40,7 +40,7 @@
       "@utils/*": ["src/utils/*"],
       "@app": ["src/app.ts"],
       "@types": ["types.d.ts"],
-      "@test/*": ["__test__/*"]
+      "@test/*": ["test/*"]
     },                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
@@ -110,11 +110,16 @@
 
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
-    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
+    "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
   },
   "exclude": [
     "node_modules",
-    "babel.config.js",
+    "babel.config.cjs",
+    "__test__",
+    "coverage",
+    "src/**/*.test.ts",
+    "jest.config.ts",
+    "jest.e2e.config.ts",
   ],
   "ts-node": {
     // Do not forget to `npm i -D tsconfig-paths`

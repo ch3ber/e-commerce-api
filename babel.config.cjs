@@ -8,15 +8,17 @@ module.exports = {
     ['module-resolver', {
       root: ['.'],
       alias: {
-        '@config': './src/config/',
-        '@db': './src/db/',
-        '@libs': './src/libs/',
-        '@routes': './src/routes/',
-        '@middlewares': './src/middlewares/',
-        '@schemas': './src/schemas/',
-        '@services': './src/services/',
-        '@utils': './src/utils/',
-        '@app': './src/app.ts'
+        '@config': './src/config',
+        '@db': './src/db',
+        '@libs': './src/libs',
+        '@routes': './src/routes',
+        '@middlewares': './src/middlewares',
+        '@schemas': './src/schemas',
+        '@services': './src/services',
+        '@utils': './src/utils',
+        '@app': './src/app.ts',
+        '@types': './types.d.ts',
+        '@test': './__test__'
       }
     }]
   ]
