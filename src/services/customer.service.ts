@@ -13,6 +13,7 @@ class CustomerService extends MakeBaseServiceFrom {
    */
   async create (data) {
     const newCustomer = await Customer.create(data, { include: ['user'] })
+    delete newCustomer.dataValues.user.dataValues.password
     return newCustomer
   }
 }
