@@ -12,10 +12,10 @@ describe('Welcome index route', () => {
     const app = appConfig()
     server = app.listen(config.port)
     api = supertest(server)
+    await sequelize.close()
   })
 
   afterAll(async () => {
-    await sequelize.close()
     await server.close()
   })
 
