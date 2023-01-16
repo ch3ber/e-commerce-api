@@ -1,8 +1,8 @@
-const { URI } = require('../../../config/config')
+const { URI, DEV_URI } = require('../../../config/config')
 
 module.exports = {
   development: {
-    url: URI,
+    url: DEV_URI,
     dialect: 'postgres'
   },
   production: {

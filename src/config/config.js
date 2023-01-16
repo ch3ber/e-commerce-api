@@ -24,3 +24,4 @@ export const USER = encodeURIComponent(config.dbUser)
 export const PASSWORD = encodeURIComponent(config.dbPassword)
 
 export const URI = config.dbUrl || `postgres://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${config.dbName}`
+export const DEV_URI = URI
