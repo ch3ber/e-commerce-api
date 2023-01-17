@@ -6,7 +6,7 @@
   "scripts": {
     "test": "NODE_ENV=test jest --detectOpenHandles",
     "test:watch": "npm run test -- --watch",
-    "test:e2e": "npm run test -- --config jest.e2e.config.ts --forceExit",
+    "test:e2e": "npm run test -- --config jest.e2e.config.ts",
     "test:e2e:watch": "npm run test:e2e -- --watch",
     "tsc": "tsc --project tsconfig.build.json",
     "dev": "NODE_ENV=dev ts-node ./src/index",
