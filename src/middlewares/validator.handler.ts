@@ -21,4 +21,26 @@ function validatorHandler (schema, property) {
   }
 }
 
+export function modelValidatorHanlder (singleSchema, mutliSchema) {
+  return (req, _res, next) => {
+    const { body } = req
+    const dataIsArray = Array.isArray(body)
+
+    if(dataIsArray) {
+      const { error } = mutliSchema.validate(body, { abortEarly: false })
+      if (error) {
+        next(boom.badRequest(error.message))
+      }
+    } else {
+      const { error } = singleSchema.validate(body, { abortEarly: false })
+      if (error) {
+        next(boom.badRequest(error.message))
+      }
+    }
+
+    next()
+  }
+
+}
+
 export default validatorHandler

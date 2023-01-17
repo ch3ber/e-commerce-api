@@ -12,7 +12,14 @@ export class MakeBaseServiceFrom {
    * @returns - The new object created in the DB
    */
   async create (data) {
-    const newObject = await this.model.create(data)
+    let newObject
+    if (Array.isArray(data)) {
+      newObject = await this.model.bulkCreate(data, { validate: true })
+    } else {
+      newObject = await this.model.create(data)
+    }
+
+    console.log({newObject})
     return newObject
   }
 

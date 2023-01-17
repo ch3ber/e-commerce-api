@@ -1,8 +1,8 @@
 import express from 'express'
 
 import { categoryService } from '@services/category.service'
-import validatorHandler from '@middlewares/validator.handler'
-import { createCategorySchema, updateCategorySchema, getCategorySchema } from '@schemas/category.schema'
+import validatorHandler, { modelValidatorHanlder } from '@middlewares/validator.handler'
+import { createCategorySchema, updateCategorySchema, getCategorySchema, createManyCategorySchema } from '@schemas/category.schema'
 import passport from 'passport'
 import { checkRoles } from '@middlewares/auth.handler'
 
@@ -34,7 +34,7 @@ router.get('/:id',
 router.post('/',
   passport.authenticate('jwt', { session: false }),
   checkRoles('admin', 'seller'),
-  validatorHandler(createCategorySchema, 'body'),
+  modelValidatorHanlder(createCategorySchema, createManyCategorySchema),
   async (req, res, next) => {
     try {
       const body = req.body

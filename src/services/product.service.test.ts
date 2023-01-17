@@ -21,9 +21,7 @@ describe('Welcome index route', () => {
 
   beforeAll(async () => {
     const app = appConfig()
-    server = app.listen(config.port, () => {
-      console.log('app for products')
-    })
+    server = app.listen(config.port)
     await sequelize.close()
   })
 

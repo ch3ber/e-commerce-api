@@ -5,6 +5,9 @@ export interface Category {
   createdAt: string;
 }
 
+export interface CategoryDTO extends Omit<Category, 'id' | 'createdAt'> {
+}
+
 
 export interface Product {
   id: number;
@@ -17,7 +20,7 @@ export interface Product {
   category: Category;
 }
 
-export interface ProductDTO extends Omit< Product, 'category'> {
+export interface ProductDTO extends Omit< Product, 'id' | 'category' | 'createdAt'> {
 }
 
 export type EmailBody = {

@@ -9,6 +9,13 @@ const createCategorySchema = Joi.object({
   image: image.required()
 })
 
+export const createManyCategorySchema = Joi.array().items(
+  Joi.object({
+    name: name.required(),
+    image: image.required()
+  })
+)
+
 const updateCategorySchema = Joi.object({
   name,
   image
