@@ -8,7 +8,7 @@
     "test:watch": "npm run test -- --watch",
     "test:e2e": "npm run test -- --config jest.e2e.config.ts",
     "test:e2e:watch": "npm run test:e2e -- --watch",
-    "tsc": "tsc --project tsconfig.build.json",
+    "tsc": "tsc --project tsconfig.build.json && resolve-tspaths",
     "dev": "NODE_ENV=dev ts-node ./src/index",
     "start": "NODE_ENV=production node ./dist/index.js",
     "lint": "eslint .",
@@ -18,7 +18,7 @@
     "migrations:revert": "sequelize-cli db:migrate:undo",
     "migrations:delete": "sequelize-cli db:migrate:undo:all",
     "predeploy": "bash predeploy.sh",
-    "deploy": "npm run predeploy && npm run tsc && resolve-tspaths && npm run migrations:run"
+    "deploy": "npm run predeploy && npm run tsc && npm run migrations:run"
   },
   "repository": {
     "type": "git",
