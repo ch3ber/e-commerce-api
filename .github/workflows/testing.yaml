@@ -37,6 +37,12 @@ jobs:
 
       - name: Connect to PostgreSQL
         run: npm run ci:test
+        env:
+          DB_USER: postgres
+          DB_PASSWORD: postgres
+          DB_HOST: postgres
+          DB_NAME: postgres
+          DB_PORT: 5432
 
       - name: Run E2E tests
         run: |
