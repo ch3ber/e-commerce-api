@@ -37,6 +37,10 @@ jobs:
 
       - name: Connect to PostgreSQL
         run: npm run ci:test
+
+      - name: Run E2E tests
+        run: |
+          npm run test:e2e
         env:
           DB_USER: postgres
           DB_PASSWORD: postgres
@@ -46,7 +50,3 @@ jobs:
           JWT_SECRET: 7fDzByet5vMSlZRWUOG8NaXFgYn9JI31
           JWT_RECOVERY_SECRET: 7fDzByet5vMSlZRWUOG8NaXFgYn9JI31
           RECOVERY_SERVICE_HOST: smtp.gmail.com
-
-      - name: Run E2E tests
-        run: |
-          npm run test:e2e
