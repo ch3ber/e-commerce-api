@@ -36,7 +36,7 @@ jobs:
         run: npm ci
 
       - name: Connect to PostgreSQL
-        run: npm run tsc && npm run migrations:run && npm run start
+        run: npm run ci:test
         env:
           DB_USER: postgres
           DB_PASSWORD: postgres

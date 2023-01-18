@@ -18,7 +18,8 @@
     "migrations:revert": "sequelize-cli db:migrate:undo",
     "migrations:delete": "sequelize-cli db:migrate:undo:all",
     "predeploy": "bash predeploy.sh",
-    "deploy": "npm run predeploy && npm run tsc && npm run migrations:run"
+    "deploy": "npm run predeploy && npm run tsc && npm run migrations:run",
+    "ci:test": "npm run tsc && npm run migrations:run"
   },
   "repository": {
     "type": "git",
