@@ -14,7 +14,7 @@ jobs:
           cache: npm
 
       - name: Install
-        run: npm ci
+        run: npm i --production
 
       - name: Run unit and integration test
         run: |
@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install dependencies
-        run: npm ci
+        run: npm i --production
 
       - name: Connect to PostgreSQL
         run: npm run tsc && npm run migrations:run && npm run start
