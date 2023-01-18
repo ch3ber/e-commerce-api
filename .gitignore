@@ -221,4 +221,4 @@ $RECYCLE.BIN/
 postgres_data
 
 # package-lock
-package-lock.json
+#package-lock.json

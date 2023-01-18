@@ -14,7 +14,7 @@ jobs:
           cache: npm
 
       - name: Install
-        run: npm i --production
+        run: npm ci
 
       - name: Run unit and integration test
         run: |
@@ -27,13 +27,13 @@ jobs:
       postgres:
         image: postgres
         env:
-          POSTGRES_PASSWORD: tester123
+          POSTGRES_PASSWORD: postgres
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
       - name: Install dependencies
-        run: npm i --production
+        run: npm ci
 
       - name: Connect to PostgreSQL
         run: npm run tsc && npm run migrations:run && npm run start
