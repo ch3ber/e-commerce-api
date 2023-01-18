@@ -43,6 +43,10 @@ jobs:
           DB_HOST: postgres
           DB_NAME: postgres
           DB_PORT: 5432
+          JWT_SECRET: 7fDzByet5vMSlZRWUOG8NaXFgYn9JI31
+          JWT_RECOVERY_SECRET: 7fDzByet5vMSlZRWUOG8NaXFgYn9JI31
+          RECOVERY_SERVICE_HOST: smtp.gmail.com
+
       - name: Run E2E tests
         run: |
           npm run test:e2e
